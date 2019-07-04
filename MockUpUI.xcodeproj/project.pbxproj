@@ -22,6 +22,8 @@
 		FF1C8CBC22CD07C200F3A862 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C8CBB22CD07C200F3A862 /* UIColorExtension.swift */; };
 		FF1C8CBE22CD0B1700F3A862 /* FriendsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C8CBD22CD0B1700F3A862 /* FriendsListTableViewCell.swift */; };
 		FF1C8CC022CD154100F3A862 /* UICollectionViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C8CBF22CD154100F3A862 /* UICollectionViewCellExtension.swift */; };
+		FF3DCFC922CE527400BAC269 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3DCFC822CE527400BAC269 /* File.swift */; };
+		FF3DCFCB22CE567600BAC269 /* FriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3DCFCA22CE567600BAC269 /* FriendCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		FF1C8CBB22CD07C200F3A862 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		FF1C8CBD22CD0B1700F3A862 /* FriendsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewCell.swift; sourceTree = "<group>"; };
 		FF1C8CBF22CD154100F3A862 /* UICollectionViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCellExtension.swift; sourceTree = "<group>"; };
+		FF3DCFC822CE527400BAC269 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		FF3DCFCA22CE567600BAC269 /* FriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 		FF1C8C8922CCC3B600F3A862 /* MockUpUI */ = {
 			isa = PBXGroup;
 			children = (
+				FF3DCFC722CE526800BAC269 /* Models */,
 				FF1C8CB822CCE72700F3A862 /* BaseViewControllers */,
 				FF1C8CB522CCE6EC00F3A862 /* Home */,
 				FF1C8CB422CCE66200F3A862 /* Extensions */,
@@ -149,8 +154,8 @@
 		FF1C8CB722CCE71800F3A862 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FF1C8CB022CCDCF400F3A862 /* ProfileTableViewCell.swift */,
-				FF1C8CBD22CD0B1700F3A862 /* FriendsListTableViewCell.swift */,
+				FF3DCFCD22CE569400BAC269 /* TableViewCells */,
+				FF3DCFCC22CE567900BAC269 /* CollectionViewCells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -161,6 +166,31 @@
 				FF1C8CAA22CCC41900F3A862 /* BaseNavigationViewController.swift */,
 			);
 			path = BaseViewControllers;
+			sourceTree = "<group>";
+		};
+		FF3DCFC722CE526800BAC269 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FF3DCFC822CE527400BAC269 /* File.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FF3DCFCC22CE567900BAC269 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				FF3DCFCA22CE567600BAC269 /* FriendCollectionViewCell.swift */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		FF3DCFCD22CE569400BAC269 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				FF1C8CB022CCDCF400F3A862 /* ProfileTableViewCell.swift */,
+				FF1C8CBD22CD0B1700F3A862 /* FriendsListTableViewCell.swift */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF1C8CAF22CCD01B00F3A862 /* UIViewExtension.swift in Sources */,
+				FF3DCFC922CE527400BAC269 /* File.swift in Sources */,
 				FF1C8CBE22CD0B1700F3A862 /* FriendsListTableViewCell.swift in Sources */,
 				FF1C8CAB22CCC41900F3A862 /* BaseNavigationViewController.swift in Sources */,
 				FF1C8C8D22CCC3B600F3A862 /* ViewController.swift in Sources */,
@@ -275,6 +306,7 @@
 				FF1C8C8B22CCC3B600F3A862 /* AppDelegate.swift in Sources */,
 				FF1C8CBA22CD036E00F3A862 /* UIImageExtension.swift in Sources */,
 				FF1C8CC022CD154100F3A862 /* UICollectionViewCellExtension.swift in Sources */,
+				FF3DCFCB22CE567600BAC269 /* FriendCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
