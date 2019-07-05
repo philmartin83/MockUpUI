@@ -10,7 +10,7 @@ import UIKit
 
 import Foundation
 
-class MainViewPresenter: UIView, UITableViewDataSource, UITableViewDelegate {
+class MainViewPresenter: UIView, NavigationBarProtocol, UITableViewDataSource, UITableViewDelegate {
     
     weak var controller: ViewController?
     var tableView: UITableView = {
@@ -29,10 +29,25 @@ class MainViewPresenter: UIView, UITableViewDataSource, UITableViewDelegate {
         return view
     }()
     
+    func setupNavBar(){
+        
+        controller?.navController = controller?.navigationController as? BaseNavigationViewController
+        controller?.navController?.navigationBar.shadowImage = UIImage()
+        
+        if let navController = controller?.navController {
+            navController.navigationBar.barTintColor = UIColor.colourStringWitHex(hexColour: "3232FF", withAlpha: 1)
+        }
+        
+        guard let label = controller?.navController?.leftTitleLabel else {return}
+        controller?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: label)
+        controller?.navController?.leftTitleLabel.textColor = .white
+        controller?.navController?.leftTitleLabel.text = "My Social App"
+    }
+    
     func displayLayout(){
         self.translatesAutoresizingMaskIntoConstraints = false
         self.leadingAnchor.constraint(equalTo: controller!.view.leadingAnchor).isActive = true
-        self.topAnchor.constraint(equalTo: controller!.view.topAnchor, constant: 90).isActive = true
+        self.topAnchor.constraint(equalTo: controller!.view.topAnchor).isActive = true
         self.bottomAnchor.constraint(equalTo: controller!.view.bottomAnchor).isActive = true
         self.rightAnchor.constraint(equalTo: controller!.view.rightAnchor).isActive = true
     
@@ -51,6 +66,7 @@ class MainViewPresenter: UIView, UITableViewDataSource, UITableViewDelegate {
         tableView.topAnchor.constraint(equalTo: holderView.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: holderView.bottomAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: holderView.rightAnchor).isActive = true
+        tableView.showsVerticalScrollIndicator = false
         // Time to register our cells
         tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: "ProfileCell")
         tableView.register(FriendsListTableViewCell.self, forCellReuseIdentifier: "FriendsCell")

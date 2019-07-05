@@ -10,11 +10,7 @@ import UIKit
 
 class BaseNavigationViewController: UINavigationController {
     
-    var barColour: UIColor?
-
     var leftTitle: String?
-
-    
     var leftTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 20)
@@ -24,8 +20,7 @@ class BaseNavigationViewController: UINavigationController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       
-        navigationBar.barTintColor = barColour
+        navigationBar.isTranslucent = false
     }
     
     override open var childForStatusBarStyle: UIViewController? {

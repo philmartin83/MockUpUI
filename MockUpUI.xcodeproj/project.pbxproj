@@ -24,6 +24,7 @@
 		FF1C8CC022CD154100F3A862 /* UICollectionViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C8CBF22CD154100F3A862 /* UICollectionViewCellExtension.swift */; };
 		FF3DCFC922CE527400BAC269 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3DCFC822CE527400BAC269 /* File.swift */; };
 		FF3DCFCB22CE567600BAC269 /* FriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3DCFCA22CE567600BAC269 /* FriendCollectionViewCell.swift */; };
+		FF485C3D22CF6E4E00993196 /* NavigationBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF485C3C22CF6E4E00993196 /* NavigationBarProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		FF1C8CBF22CD154100F3A862 /* UICollectionViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCellExtension.swift; sourceTree = "<group>"; };
 		FF3DCFC822CE527400BAC269 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		FF3DCFCA22CE567600BAC269 /* FriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewCell.swift; sourceTree = "<group>"; };
+		FF485C3C22CF6E4E00993196 /* NavigationBarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		FF1C8C8922CCC3B600F3A862 /* MockUpUI */ = {
 			isa = PBXGroup;
 			children = (
+				FF485C3B22CF6E3400993196 /* Protocol */,
 				FF3DCFC722CE526800BAC269 /* Models */,
 				FF1C8CB822CCE72700F3A862 /* BaseViewControllers */,
 				FF1C8CB522CCE6EC00F3A862 /* Home */,
@@ -191,6 +194,14 @@
 				FF1C8CBD22CD0B1700F3A862 /* FriendsListTableViewCell.swift */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		FF485C3B22CF6E3400993196 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				FF485C3C22CF6E4E00993196 /* NavigationBarProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +314,7 @@
 				FF1C8CB322CCE5DB00F3A862 /* UITableViewCellExtension.swift in Sources */,
 				FF1C8CBC22CD07C200F3A862 /* UIColorExtension.swift in Sources */,
 				FF1C8CAD22CCCC4D00F3A862 /* MainViewPresenter.swift in Sources */,
+				FF485C3D22CF6E4E00993196 /* NavigationBarProtocol.swift in Sources */,
 				FF1C8C8B22CCC3B600F3A862 /* AppDelegate.swift in Sources */,
 				FF1C8CBA22CD036E00F3A862 /* UIImageExtension.swift in Sources */,
 				FF1C8CC022CD154100F3A862 /* UICollectionViewCellExtension.swift in Sources */,

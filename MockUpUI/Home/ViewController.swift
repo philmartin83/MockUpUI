@@ -10,19 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    fileprivate var navController: BaseNavigationViewController?
-    
-    fileprivate var presenter = MainViewPresenter()
+    //MARK:-Properties
+    var navController: BaseNavigationViewController?
+    var presenter = MainViewPresenter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         presenter.controller = self
-        navController = self.navigationController as? BaseNavigationViewController
-        navController?.navigationBar.shadowImage = UIImage()
-        view.backgroundColor = .blue
-        guard let label = navController?.leftTitleLabel else {return}
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: label)
+        presenter.setupNavBar()
+        view.backgroundColor = UIColor.colourStringWitHex(hexColour: "3232FF", withAlpha: 1)
         view.addSubview(presenter)
         presenter.displayLayout()
     }

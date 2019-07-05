@@ -19,10 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let vc = ViewController()
         let navicontroller = BaseNavigationViewController(rootViewController: vc)
-        navicontroller.leftTitleLabel.textColor = .white
-        navicontroller.leftTitleLabel.text = "My Social App"
-        navicontroller.barColour = .blue
-        
         self.window?.rootViewController = navicontroller
         self.window?.makeKeyAndVisible()
         
