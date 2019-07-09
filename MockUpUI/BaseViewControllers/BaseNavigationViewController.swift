@@ -18,9 +18,20 @@ class BaseNavigationViewController: UINavigationController {
         return label
     }()
     
+    var backButton: UIButton = {
+        let backButton = UIButton(type: .custom)
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        let image = UIImageView(image: UIImage(named: "BackButton")?.withRenderingMode(.alwaysTemplate))
+        image.tintColor = .white
+        backButton.setImage(image.image, for: .normal)
+        
+        return backButton
+    }()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationBar.isTranslucent = false
+        interactivePopGestureRecognizer?.delegate = nil;
     }
     
     override open var childForStatusBarStyle: UIViewController? {

@@ -10,7 +10,7 @@ import UIKit
 
 import Foundation
 
-class MainViewPresenter: UIView, NavigationBarProtocol, UITableViewDataSource, UITableViewDelegate {
+class MainViewPresenter: UIView, NavigationBarProtocol, LayoutProtocol, UITableViewDataSource, UITableViewDelegate {
     
     weak var controller: ViewController?
     var tableView: UITableView = {
@@ -35,7 +35,7 @@ class MainViewPresenter: UIView, NavigationBarProtocol, UITableViewDataSource, U
         controller?.navController?.navigationBar.shadowImage = UIImage()
         
         if let navController = controller?.navController {
-            navController.navigationBar.barTintColor = UIColor.colourStringWitHex(hexColour: "3232FF", withAlpha: 1)
+            navController.navigationBar.barTintColor = navbarColour
         }
         
         guard let label = controller?.navController?.leftTitleLabel else {return}
@@ -45,6 +45,8 @@ class MainViewPresenter: UIView, NavigationBarProtocol, UITableViewDataSource, U
     }
     
     func displayLayout(){
+        
+        controller?.view.addSubview(self)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.leadingAnchor.constraint(equalTo: controller!.view.leadingAnchor).isActive = true
         self.topAnchor.constraint(equalTo: controller!.view.topAnchor).isActive = true
@@ -57,7 +59,6 @@ class MainViewPresenter: UIView, NavigationBarProtocol, UITableViewDataSource, U
         holderView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         holderView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         holderView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        
         
         holderView.addSubview(tableView)
         tableView.delegate = self
@@ -102,6 +103,7 @@ class MainViewPresenter: UIView, NavigationBarProtocol, UITableViewDataSource, U
             profileSectionCell.name.text = "Panthro"
             profileSectionCell.bio.text = "Add a short bio to tell people more about yourself"
             tableView.separatorStyle = .none
+            profileSectionCell.addBioButton.addTarget(controller?.interactor, action: #selector(controller?.interactor.presentBioScreen), for: .touchUpInside)
             return profileSectionCell // we can force unwrap here as have already init'd above.
             
         }else if indexPath.section == 1{
@@ -121,11 +123,38 @@ class MainViewPresenter: UIView, NavigationBarProtocol, UITableViewDataSource, U
         
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section > 1{
+            let view = UIView()
+            view.frame = CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 100)
+            view.backgroundColor = primaryColour
+            let label = UILabel()
+            label.numberOfLines = 0
+            label.text = "News Feed"
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.font = UIFont.boldSystemFont(ofSize: mediumBoldFontSize)
+            label.textColor = .white
+            view.addSubview(label)
+            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true
+            label.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+            return view
+            
+        }
+        return nil
+        
+    }
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 10
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section > 1{
+            return 90
+        }
+        return 0
     }
     
     

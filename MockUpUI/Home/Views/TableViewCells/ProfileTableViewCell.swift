@@ -44,15 +44,15 @@ class ProfileTableViewCell: UITableViewCell {
         bioBtn.setTitle("+ Add Bio", for: .normal)
         bioBtn.setTitleColor(.black, for: .normal)
         bioBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
-        bioBtn.backgroundColor = UIColor.colourStringWitHex(hexColour: "F6F6F6", withAlpha: 1)
+        bioBtn.backgroundColor = secondaryButtonBackgroundColour
         bioBtn.translatesAutoresizingMaskIntoConstraints = false
-        bioBtn.layer.cornerRadius = 5
+        bioBtn.layer.cornerRadius = buttonCornerRadius
         return bioBtn
     }()
     
     var addStoryBtn: UIButton = {
         var storyBtn = UIButton(type: .custom)
-        storyBtn.backgroundColor = UIColor.colourStringWitHex(hexColour: "7F7FFF", withAlpha: 1)
+        storyBtn.backgroundColor = primaryColour
         storyBtn.setTitleColor(.white, for: .normal)
         storyBtn.imageView?.contentMode = .scaleAspectFit
         let btnIcon = UIImage(named: "Camera")?.withRenderingMode(.alwaysTemplate)
@@ -62,7 +62,7 @@ class ProfileTableViewCell: UITableViewCell {
         storyBtn.imageView?.tintColor = .white
         storyBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
         storyBtn.imageView?.tintColor = .white
-        storyBtn.layer.cornerRadius = 5
+        storyBtn.layer.cornerRadius = buttonCornerRadius
         storyBtn.translatesAutoresizingMaskIntoConstraints = false
         return storyBtn
         
@@ -71,9 +71,9 @@ class ProfileTableViewCell: UITableViewCell {
     var profileSettingsButton: UIButton = {
         let settingsBtn = UIButton(type: .custom)
         settingsBtn.setImage(#imageLiteral(resourceName: "Settings"), for: .normal)
-        settingsBtn.backgroundColor = UIColor.colourStringWitHex(hexColour: "F6F6F6", withAlpha: 1)
+        settingsBtn.backgroundColor = secondaryButtonBackgroundColour
         settingsBtn.translatesAutoresizingMaskIntoConstraints = false
-        settingsBtn.layer.cornerRadius = 5
+        settingsBtn.layer.cornerRadius = buttonCornerRadius
         return settingsBtn
     }()
     

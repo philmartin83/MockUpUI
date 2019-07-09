@@ -13,20 +13,21 @@ class ViewController: UIViewController {
     //MARK:-Properties
     var navController: BaseNavigationViewController?
     var presenter = MainViewPresenter()
+    var interactor = MainViewInteractor()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         presenter.controller = self
-        presenter.setupNavBar()
-        view.backgroundColor = UIColor.colourStringWitHex(hexColour: "3232FF", withAlpha: 1)
-        view.addSubview(presenter)
+        interactor.viewController = self
+        view.backgroundColor = navbarColour
         presenter.displayLayout()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setNeedsStatusBarAppearanceUpdate()
+        presenter.setupNavBar()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

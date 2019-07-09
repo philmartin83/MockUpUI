@@ -31,7 +31,7 @@ class FriendsListTableViewCell: UITableViewCell, UICollectionViewDelegate, UICol
     var titleLabel: UILabel = {
         let title = UILabel()
         title.text = "Friends"
-        title.font = UIFont.boldSystemFont(ofSize: 35)
+        title.font = UIFont.boldSystemFont(ofSize: boldFontSize)
         title.translatesAutoresizingMaskIntoConstraints = false
         title.sizeToFit()
         return title
@@ -59,13 +59,26 @@ class FriendsListTableViewCell: UITableViewCell, UICollectionViewDelegate, UICol
     }()
     
     var findFriendsButton: UIButton = {
-        let seeAll = UIButton(type: .custom)
-        seeAll.setTitle("Find Friends", for: .normal)
-        seeAll.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-        seeAll.titleLabel?.sizeToFit()
-        seeAll.translatesAutoresizingMaskIntoConstraints = false
-        seeAll.setTitleColor(.blue, for: .normal)
-        return seeAll
+        let findFirends = UIButton(type: .custom)
+        findFirends.setTitle("Find Friends", for: .normal)
+        findFirends.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        findFirends.titleLabel?.sizeToFit()
+        findFirends.translatesAutoresizingMaskIntoConstraints = false
+        findFirends.setTitleColor(.blue, for: .normal)
+        return findFirends
+    }()
+    
+    var viewAllFriendsButton: UIButton = {
+        
+        let seeAllFriends = UIButton(type: .custom)
+        seeAllFriends.setTitle("See All Friends", for: .normal)
+        seeAllFriends.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+        seeAllFriends.titleLabel?.sizeToFit()
+        seeAllFriends.translatesAutoresizingMaskIntoConstraints = false
+        seeAllFriends.setTitleColor(.black, for: .normal)
+        seeAllFriends.backgroundColor = secondaryButtonBackgroundColour
+        seeAllFriends.layer.cornerRadius = buttonCornerRadius
+        return seeAllFriends
     }()
     
     
@@ -76,12 +89,12 @@ class FriendsListTableViewCell: UITableViewCell, UICollectionViewDelegate, UICol
         titleLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 15).isActive = true
         titleLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
         
-        self.addSubview(findFriendsButton)
+        self.contentView.addSubview(findFriendsButton)
         findFriendsButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
         findFriendsButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
         
         // Add out friend count label
-        self.addSubview(friendCount)
+        self.contentView.addSubview(friendCount)
         friendCount.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
         friendCount.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
         friendCount.widthAnchor.constraint(equalToConstant: 120).isActive = true
@@ -98,6 +111,12 @@ class FriendsListTableViewCell: UITableViewCell, UICollectionViewDelegate, UICol
         collectionView.topAnchor.constraint(equalTo: friendCount.bottomAnchor, constant: 25).isActive = true
         collectionView.register(FriendCollectionViewCell.self, forCellWithReuseIdentifier: "FriendsCollectionCell")
         collectionView.showsHorizontalScrollIndicator = false // dont watn to show the scoll indicator here.
+        
+        self.contentView.addSubview(viewAllFriendsButton)
+        viewAllFriendsButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20).isActive = true
+        viewAllFriendsButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20).isActive = true
+        viewAllFriendsButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        viewAllFriendsButton.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 20).isActive = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
