@@ -14,3 +14,4 @@ let buttonCornerRadius: CGFloat = 5
 let boldFontSize: CGFloat = 35
 let mediumBoldFontSize: CGFloat = 25
 let navbarColour = UIColor.colourStringWitHex(hexColour: "3232FF", withAlpha: 1)
+let duration: CFTimeInterval = 0.5

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A0DB2BB22D68AFB00BA38D5 /* StoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0DB2BA22D68AFB00BA38D5 /* StoryInteractor.swift */; };
+		4A0DB2C122D68FF500BA38D5 /* StorySettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0DB2C022D68FF500BA38D5 /* StorySettingsViewController.swift */; };
+		4A0DB2C322D6900E00BA38D5 /* StorySettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0DB2C222D6900E00BA38D5 /* StorySettingsPresenter.swift */; };
+		4A0DB2C522D690BA00BA38D5 /* StorySettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0DB2C422D690BA00BA38D5 /* StorySettingsInteractor.swift */; };
 		FF1C8C8B22CCC3B600F3A862 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C8C8A22CCC3B600F3A862 /* AppDelegate.swift */; };
 		FF1C8C8D22CCC3B600F3A862 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C8C8C22CCC3B600F3A862 /* ViewController.swift */; };
 		FF1C8C9022CCC3B600F3A862 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1C8C8E22CCC3B600F3A862 /* Main.storyboard */; };
@@ -56,6 +60,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A0DB2BA22D68AFB00BA38D5 /* StoryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryInteractor.swift; sourceTree = "<group>"; };
+		4A0DB2C022D68FF500BA38D5 /* StorySettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorySettingsViewController.swift; sourceTree = "<group>"; };
+		4A0DB2C222D6900E00BA38D5 /* StorySettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorySettingsPresenter.swift; sourceTree = "<group>"; };
+		4A0DB2C422D690BA00BA38D5 /* StorySettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorySettingsInteractor.swift; sourceTree = "<group>"; };
 		FF1C8C8722CCC3B600F3A862 /* MockUpUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockUpUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1C8C8A22CCC3B600F3A862 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF1C8C8C22CCC3B600F3A862 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +124,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A0DB2B922D68AE700BA38D5 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				4A0DB2BA22D68AFB00BA38D5 /* StoryInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4A0DB2BC22D68FC200BA38D5 /* StorySettings */ = {
+			isa = PBXGroup;
+			children = (
+				4A0DB2BF22D68FDE00BA38D5 /* Interactor */,
+				4A0DB2BE22D68FD400BA38D5 /* Presenter */,
+				4A0DB2BD22D68FCB00BA38D5 /* Controller */,
+			);
+			path = StorySettings;
+			sourceTree = "<group>";
+		};
+		4A0DB2BD22D68FCB00BA38D5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4A0DB2C022D68FF500BA38D5 /* StorySettingsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4A0DB2BE22D68FD400BA38D5 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4A0DB2C222D6900E00BA38D5 /* StorySettingsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4A0DB2BF22D68FDE00BA38D5 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				4A0DB2C422D690BA00BA38D5 /* StorySettingsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		FF1C8C7E22CCC3B600F3A862 = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +329,8 @@
 		FF763F5122D646D300620347 /* Story */ = {
 			isa = PBXGroup;
 			children = (
+				4A0DB2BC22D68FC200BA38D5 /* StorySettings */,
+				4A0DB2B922D68AE700BA38D5 /* Interactor */,
 				FF763F5622D6479200620347 /* Presenter */,
 				FF763F5322D6475100620347 /* CameraController */,
 				FF763F5222D6472000620347 /* Controller */,
@@ -498,8 +550,11 @@
 				FFA0659322D4D6A6003B0B60 /* LayoutProtocol.swift in Sources */,
 				FF1C8CBE22CD0B1700F3A862 /* FriendsListTableViewCell.swift in Sources */,
 				FF1C8CAB22CCC41900F3A862 /* BaseNavigationViewController.swift in Sources */,
+				4A0DB2C122D68FF500BA38D5 /* StorySettingsViewController.swift in Sources */,
 				FF1C8C8D22CCC3B600F3A862 /* ViewController.swift in Sources */,
 				FFA0659122D4D5F8003B0B60 /* BioViewController.swift in Sources */,
+				4A0DB2C522D690BA00BA38D5 /* StorySettingsInteractor.swift in Sources */,
+				4A0DB2BB22D68AFB00BA38D5 /* StoryInteractor.swift in Sources */,
 				FF1C8CB122CCDCF400F3A862 /* ProfileTableViewCell.swift in Sources */,
 				FF1C8CB322CCE5DB00F3A862 /* UITableViewCellExtension.swift in Sources */,
 				FF763F5922D647EB00620347 /* CameraControllerExtension.swift in Sources */,
@@ -515,6 +570,7 @@
 				FF763F4A22D623A800620347 /* HomeViewTableViewDataSource.swift in Sources */,
 				FF1C8CBA22CD036E00F3A862 /* UIImageExtension.swift in Sources */,
 				FF763F4E22D6244600620347 /* HomeViewTableViewDelegate.swift in Sources */,
+				4A0DB2C322D6900E00BA38D5 /* StorySettingsPresenter.swift in Sources */,
 				FFA0658F22D4D51B003B0B60 /* BioInteractor.swift in Sources */,
 				FF1C8CC022CD154100F3A862 /* UICollectionViewCellExtension.swift in Sources */,
 				FFA0659622D4D719003B0B60 /* MainViewInteractor.swift in Sources */,

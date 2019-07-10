@@ -10,15 +10,14 @@ import UIKit
 
 class BaseNavigationViewController: UINavigationController {
     
-    var leftTitle: String?
-    var leftTitleLabel: UILabel = {
+    lazy var leftTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    var backButton: UIButton = {
+    lazy var backButton: UIButton = {
         let backButton = UIButton(type: .custom)
         backButton.translatesAutoresizingMaskIntoConstraints = false
         let image = UIImageView(image: UIImage(named: "BackButton")?.withRenderingMode(.alwaysTemplate))
@@ -26,6 +25,13 @@ class BaseNavigationViewController: UINavigationController {
         backButton.setImage(image.image, for: .normal)
         
         return backButton
+    }()
+    
+    lazy var closeButton: UIButton = {
+        let closeBtn = UIButton(type: .custom)
+        closeBtn.translatesAutoresizingMaskIntoConstraints = false
+        closeBtn.setImage(UIImage(named: "Close"), for: .normal)
+        return closeBtn
     }()
     
     override func viewWillAppear(_ animated: Bool) {

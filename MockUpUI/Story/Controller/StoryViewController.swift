@@ -11,12 +11,14 @@ import UIKit
 class StoryViewController: UIViewController {
     
     var presenter = StoryPresenter()
+    var interactor = StoryInteractor()
 
     override func viewDidLoad() {
         super.viewDidLoad()
        
         // Do any additional setup after loading the view.
         presenter.controller = self
+        interactor.controller = self
         presenter.displayLayout()
         view.backgroundColor = .black
     }

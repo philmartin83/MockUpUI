@@ -36,7 +36,7 @@ class MainViewInteractor{
             if let weakSelf = self{
                 let story = StoryViewController()
                 let transition = CATransition()
-                transition.duration = 0.5
+                transition.duration = duration
                 transition.type = CATransitionType.push
                 transition.subtype = CATransitionSubtype.fromLeft
                 transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)

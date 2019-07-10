@@ -27,6 +27,8 @@ class BioPresenter: UIView, NavigationBarProtocol, LayoutProtocol{
         controller?.navController?.navigationItem.hidesBackButton = true
         guard let label = controller?.navController?.leftTitleLabel else {return}
         guard let button = controller?.navController?.backButton else {return}
+        button.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 20).isActive = true
         button.tintColor = .white
         
         let item1 = UIBarButtonItem(customView: button)
