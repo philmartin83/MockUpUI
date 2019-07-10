@@ -25,6 +25,17 @@
 		FF3DCFC922CE527400BAC269 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3DCFC822CE527400BAC269 /* File.swift */; };
 		FF3DCFCB22CE567600BAC269 /* FriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3DCFCA22CE567600BAC269 /* FriendCollectionViewCell.swift */; };
 		FF485C3D22CF6E4E00993196 /* NavigationBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF485C3C22CF6E4E00993196 /* NavigationBarProtocol.swift */; };
+		FF763F4422D61E1400620347 /* demo.json in Resources */ = {isa = PBXBuildFile; fileRef = FF763F4322D61E1400620347 /* demo.json */; };
+		FF763F4622D61E2D00620347 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF763F4522D61E2D00620347 /* Feed.swift */; };
+		FF763F4822D6221500620347 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF763F4722D6221500620347 /* DataLoader.swift */; };
+		FF763F4A22D623A800620347 /* HomeViewTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF763F4922D623A800620347 /* HomeViewTableViewDataSource.swift */; };
+		FF763F4E22D6244600620347 /* HomeViewTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF763F4D22D6244600620347 /* HomeViewTableViewDelegate.swift */; };
+		FF763F5022D628CC00620347 /* NewsFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF763F4F22D628CC00620347 /* NewsFeedTableViewCell.swift */; };
+		FF763F5522D6476D00620347 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF763F5422D6476D00620347 /* CameraController.swift */; };
+		FF763F5922D647EB00620347 /* CameraControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF763F5822D647EB00620347 /* CameraControllerExtension.swift */; };
+		FF763F5C22D6484300620347 /* CameraControllerEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF763F5B22D6484300620347 /* CameraControllerEnum.swift */; };
+		FF763F5E22D64AE100620347 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF763F5D22D64AE100620347 /* StoryViewController.swift */; };
+		FF763F6022D64AEF00620347 /* StoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF763F5F22D64AEF00620347 /* StoryPresenter.swift */; };
 		FFA0658222D4C86E003B0B60 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0658122D4C86E003B0B60 /* UIButtonExtension.swift */; };
 		FFA0658622D4CAA7003B0B60 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0658522D4CAA7003B0B60 /* Constants.swift */; };
 		FFA0658D22D4D4D9003B0B60 /* BioPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0658C22D4D4D9003B0B60 /* BioPresenter.swift */; };
@@ -67,6 +78,17 @@
 		FF3DCFC822CE527400BAC269 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		FF3DCFCA22CE567600BAC269 /* FriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewCell.swift; sourceTree = "<group>"; };
 		FF485C3C22CF6E4E00993196 /* NavigationBarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarProtocol.swift; sourceTree = "<group>"; };
+		FF763F4322D61E1400620347 /* demo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = demo.json; sourceTree = "<group>"; };
+		FF763F4522D61E2D00620347 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		FF763F4722D6221500620347 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		FF763F4922D623A800620347 /* HomeViewTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTableViewDataSource.swift; sourceTree = "<group>"; };
+		FF763F4D22D6244600620347 /* HomeViewTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTableViewDelegate.swift; sourceTree = "<group>"; };
+		FF763F4F22D628CC00620347 /* NewsFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewCell.swift; sourceTree = "<group>"; };
+		FF763F5422D6476D00620347 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		FF763F5822D647EB00620347 /* CameraControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControllerExtension.swift; sourceTree = "<group>"; };
+		FF763F5B22D6484300620347 /* CameraControllerEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControllerEnum.swift; sourceTree = "<group>"; };
+		FF763F5D22D64AE100620347 /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
+		FF763F5F22D64AEF00620347 /* StoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPresenter.swift; sourceTree = "<group>"; };
 		FFA0658122D4C86E003B0B60 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		FFA0658522D4CAA7003B0B60 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FFA0658C22D4D4D9003B0B60 /* BioPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioPresenter.swift; sourceTree = "<group>"; };
@@ -115,11 +137,13 @@
 		FF1C8C8922CCC3B600F3A862 /* MockUpUI */ = {
 			isa = PBXGroup;
 			children = (
+				FF763F4222D61E0200620347 /* MockedJSON */,
 				FFA0658722D4D3C5003B0B60 /* Bio */,
 				FFA0658422D4CA98003B0B60 /* Constants */,
 				FF485C3B22CF6E3400993196 /* Protocol */,
 				FF3DCFC722CE526800BAC269 /* Models */,
 				FF1C8CB822CCE72700F3A862 /* BaseViewControllers */,
+				FF763F5122D646D300620347 /* Story */,
 				FF1C8CB522CCE6EC00F3A862 /* Home */,
 				FF1C8CB422CCE66200F3A862 /* Extensions */,
 				FF1C8C8A22CCC3B600F3A862 /* AppDelegate.swift */,
@@ -156,6 +180,8 @@
 		FF1C8CB522CCE6EC00F3A862 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				FF763F4C22D6240B00620347 /* TableViewDelegate */,
+				FF763F4B22D623F300620347 /* TableViewDataSource */,
 				FFA0658922D4D40B003B0B60 /* Controller */,
 				FFA0658322D4C889003B0B60 /* Interactor */,
 				FF1C8CB722CCE71800F3A862 /* Views */,
@@ -193,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				FF3DCFC822CE527400BAC269 /* File.swift */,
+				FF763F4522D61E2D00620347 /* Feed.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -210,6 +237,7 @@
 			children = (
 				FF1C8CB022CCDCF400F3A862 /* ProfileTableViewCell.swift */,
 				FF1C8CBD22CD0B1700F3A862 /* FriendsListTableViewCell.swift */,
+				FF763F4F22D628CC00620347 /* NewsFeedTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -221,6 +249,83 @@
 				FFA0659222D4D6A6003B0B60 /* LayoutProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		FF763F4222D61E0200620347 /* MockedJSON */ = {
+			isa = PBXGroup;
+			children = (
+				FF763F4322D61E1400620347 /* demo.json */,
+				FF763F4722D6221500620347 /* DataLoader.swift */,
+			);
+			path = MockedJSON;
+			sourceTree = "<group>";
+		};
+		FF763F4B22D623F300620347 /* TableViewDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				FF763F4922D623A800620347 /* HomeViewTableViewDataSource.swift */,
+			);
+			path = TableViewDataSource;
+			sourceTree = "<group>";
+		};
+		FF763F4C22D6240B00620347 /* TableViewDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				FF763F4D22D6244600620347 /* HomeViewTableViewDelegate.swift */,
+			);
+			path = TableViewDelegate;
+			sourceTree = "<group>";
+		};
+		FF763F5122D646D300620347 /* Story */ = {
+			isa = PBXGroup;
+			children = (
+				FF763F5622D6479200620347 /* Presenter */,
+				FF763F5322D6475100620347 /* CameraController */,
+				FF763F5222D6472000620347 /* Controller */,
+			);
+			path = Story;
+			sourceTree = "<group>";
+		};
+		FF763F5222D6472000620347 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FF763F5D22D64AE100620347 /* StoryViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FF763F5322D6475100620347 /* CameraController */ = {
+			isa = PBXGroup;
+			children = (
+				FF763F5A22D6482A00620347 /* Enum */,
+				FF763F5722D647A000620347 /* CameraControllerExtention */,
+				FF763F5422D6476D00620347 /* CameraController.swift */,
+			);
+			path = CameraController;
+			sourceTree = "<group>";
+		};
+		FF763F5622D6479200620347 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FF763F5F22D64AEF00620347 /* StoryPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FF763F5722D647A000620347 /* CameraControllerExtention */ = {
+			isa = PBXGroup;
+			children = (
+				FF763F5822D647EB00620347 /* CameraControllerExtension.swift */,
+			);
+			path = CameraControllerExtention;
+			sourceTree = "<group>";
+		};
+		FF763F5A22D6482A00620347 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				FF763F5B22D6484300620347 /* CameraControllerEnum.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 		FFA0658322D4C889003B0B60 /* Interactor */ = {
@@ -364,6 +469,7 @@
 			files = (
 				FF1C8C9522CCC3B800F3A862 /* LaunchScreen.storyboard in Resources */,
 				FF1C8C9222CCC3B800F3A862 /* Assets.xcassets in Resources */,
+				FF763F4422D61E1400620347 /* demo.json in Resources */,
 				FF1C8C9022CCC3B600F3A862 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,9 +488,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF763F5E22D64AE100620347 /* StoryViewController.swift in Sources */,
+				FF763F5522D6476D00620347 /* CameraController.swift in Sources */,
 				FF1C8CAF22CCD01B00F3A862 /* UIViewExtension.swift in Sources */,
 				FF3DCFC922CE527400BAC269 /* File.swift in Sources */,
+				FF763F4822D6221500620347 /* DataLoader.swift in Sources */,
 				FFA0658D22D4D4D9003B0B60 /* BioPresenter.swift in Sources */,
+				FF763F6022D64AEF00620347 /* StoryPresenter.swift in Sources */,
 				FFA0659322D4D6A6003B0B60 /* LayoutProtocol.swift in Sources */,
 				FF1C8CBE22CD0B1700F3A862 /* FriendsListTableViewCell.swift in Sources */,
 				FF1C8CAB22CCC41900F3A862 /* BaseNavigationViewController.swift in Sources */,
@@ -392,13 +502,19 @@
 				FFA0659122D4D5F8003B0B60 /* BioViewController.swift in Sources */,
 				FF1C8CB122CCDCF400F3A862 /* ProfileTableViewCell.swift in Sources */,
 				FF1C8CB322CCE5DB00F3A862 /* UITableViewCellExtension.swift in Sources */,
+				FF763F5922D647EB00620347 /* CameraControllerExtension.swift in Sources */,
 				FFA0658622D4CAA7003B0B60 /* Constants.swift in Sources */,
 				FF1C8CBC22CD07C200F3A862 /* UIColorExtension.swift in Sources */,
 				FF1C8CAD22CCCC4D00F3A862 /* MainViewPresenter.swift in Sources */,
+				FF763F5C22D6484300620347 /* CameraControllerEnum.swift in Sources */,
+				FF763F5022D628CC00620347 /* NewsFeedTableViewCell.swift in Sources */,
 				FF485C3D22CF6E4E00993196 /* NavigationBarProtocol.swift in Sources */,
 				FF1C8C8B22CCC3B600F3A862 /* AppDelegate.swift in Sources */,
+				FF763F4622D61E2D00620347 /* Feed.swift in Sources */,
 				FFA0658222D4C86E003B0B60 /* UIButtonExtension.swift in Sources */,
+				FF763F4A22D623A800620347 /* HomeViewTableViewDataSource.swift in Sources */,
 				FF1C8CBA22CD036E00F3A862 /* UIImageExtension.swift in Sources */,
+				FF763F4E22D6244600620347 /* HomeViewTableViewDelegate.swift in Sources */,
 				FFA0658F22D4D51B003B0B60 /* BioInteractor.swift in Sources */,
 				FF1C8CC022CD154100F3A862 /* UICollectionViewCellExtension.swift in Sources */,
 				FFA0659622D4D719003B0B60 /* MainViewInteractor.swift in Sources */,

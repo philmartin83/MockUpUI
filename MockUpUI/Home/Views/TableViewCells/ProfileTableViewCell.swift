@@ -78,6 +78,7 @@ class ProfileTableViewCell: UITableViewCell {
     }()
     
     override func layoutSubviews() {
+        self.contentView.clipsToBounds = true
         self.contentView.addSubview(profileImage)
         profileImage.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor).isActive = true
         profileImage.widthAnchor.constraint(equalToConstant: 240).isActive = true

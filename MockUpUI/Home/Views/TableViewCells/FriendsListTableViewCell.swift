@@ -10,7 +10,7 @@ import UIKit
 
 class FriendsListTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
 
-    var collectionView: UICollectionView = {
+    lazy var collectionView: UICollectionView = {
         
         //Flow layout
         let flowLayout = UICollectionViewFlowLayout()
@@ -28,7 +28,7 @@ class FriendsListTableViewCell: UITableViewCell, UICollectionViewDelegate, UICol
         return collection
     }()
     
-    var titleLabel: UILabel = {
+    lazy var titleLabel: UILabel = {
         let title = UILabel()
         title.text = "Friends"
         title.font = UIFont.boldSystemFont(ofSize: boldFontSize)
@@ -37,7 +37,7 @@ class FriendsListTableViewCell: UITableViewCell, UICollectionViewDelegate, UICol
         return title
     }()
     
-    var friendCount: UILabel = {
+    lazy var friendCount: UILabel = {
         let friendCount = UILabel()
         friendCount.font = UIFont.systemFont(ofSize: 16)
         friendCount.textColor = UIColor.colourStringWitHex(hexColour: "bfbfbf", withAlpha: 1)
@@ -45,7 +45,7 @@ class FriendsListTableViewCell: UITableViewCell, UICollectionViewDelegate, UICol
         return friendCount
     }()
     
-    var friends: [Friend] = {
+    lazy var friends: [Friend] = {
         // normally this sort of stuff will be from the server in some json but for this demo purpose I'll create the array here may build some JSON to read from the bundle
         var newFriends = [Friend]()
         let arrayOfNames = ["Cheetara", "Lion-O", "Snarf", "Tygra", "WilyKit", "Pumyra", "Jaga", "Alluro"]
@@ -58,7 +58,7 @@ class FriendsListTableViewCell: UITableViewCell, UICollectionViewDelegate, UICol
         return newFriends
     }()
     
-    var findFriendsButton: UIButton = {
+    lazy var findFriendsButton: UIButton = {
         let findFirends = UIButton(type: .custom)
         findFirends.setTitle("Find Friends", for: .normal)
         findFirends.titleLabel?.font = UIFont.systemFont(ofSize: 15)
@@ -68,7 +68,7 @@ class FriendsListTableViewCell: UITableViewCell, UICollectionViewDelegate, UICol
         return findFirends
     }()
     
-    var viewAllFriendsButton: UIButton = {
+    lazy var viewAllFriendsButton: UIButton = {
         
         let seeAllFriends = UIButton(type: .custom)
         seeAllFriends.setTitle("See All Friends", for: .normal)
@@ -84,6 +84,8 @@ class FriendsListTableViewCell: UITableViewCell, UICollectionViewDelegate, UICol
     
     override func layoutSubviews() {
         // Add our title label
+        
+        self.contentView.clipsToBounds = true
         self.contentView.addSubview(titleLabel)
         titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 15).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 15).isActive = true

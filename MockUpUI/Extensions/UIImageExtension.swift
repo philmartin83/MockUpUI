@@ -27,5 +27,16 @@ extension UIImage {
         
         return newImage!
     }
+    
+    func base64Decode(strBase64: String?) -> UIImage?{
+        
+        guard let strBase64 = strBase64 else{return nil}
+        
+        let dataDecoded = Data(base64Encoded: strBase64, options: NSData.Base64DecodingOptions(rawValue: 0))
+        guard let dataDecode = dataDecoded else{return nil}
+        
+        let decodedimage = UIImage(data: dataDecode)
+        return decodedimage
+    }
 }
 

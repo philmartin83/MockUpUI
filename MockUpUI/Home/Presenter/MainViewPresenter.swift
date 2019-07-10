@@ -10,10 +10,14 @@ import UIKit
 
 import Foundation
 
-class MainViewPresenter: UIView, NavigationBarProtocol, LayoutProtocol, UITableViewDataSource, UITableViewDelegate {
+class MainViewPresenter: UIView, NavigationBarProtocol, LayoutProtocol {
+    
+    
+    fileprivate let dataSource = HomeViewTableViewDataSource()
+    fileprivate let delegate = HomeViewTableViewDelegate()
     
     weak var controller: ViewController?
-    var tableView: UITableView = {
+    lazy var tableView: UITableView = {
         let tV = UITableView()
         tV.backgroundColor = .clear
         tV.translatesAutoresizingMaskIntoConstraints = false
@@ -21,7 +25,7 @@ class MainViewPresenter: UIView, NavigationBarProtocol, LayoutProtocol, UITableV
         return tV
     }()
     
-    var holderView: UIView = {
+    lazy var holderView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 40
         view.backgroundColor = .white
@@ -61,8 +65,16 @@ class MainViewPresenter: UIView, NavigationBarProtocol, LayoutProtocol, UITableV
         holderView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         
         holderView.addSubview(tableView)
-        tableView.delegate = self
-        tableView.dataSource = self
+        dataSource.controller = controller
+        dataSource.fetchData()
+        
+        dataSource.reloadClosure = { [weak self] in
+            if let weakSelf = self{
+                weakSelf.tableView.reloadData()
+            }
+        }
+        tableView.delegate = delegate
+        tableView.dataSource = dataSource
         tableView.leadingAnchor.constraint(equalTo: holderView.leadingAnchor).isActive = true
         tableView.topAnchor.constraint(equalTo: holderView.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: holderView.bottomAnchor).isActive = true
@@ -71,91 +83,8 @@ class MainViewPresenter: UIView, NavigationBarProtocol, LayoutProtocol, UITableV
         // Time to register our cells
         tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: "ProfileCell")
         tableView.register(FriendsListTableViewCell.self, forCellReuseIdentifier: "FriendsCell")
+        tableView.register(NewsFeedTableViewCell.self, forCellReuseIdentifier: "NewsFeed")
     
     }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 || section == 1{
-            return 1
-        }else{
-            return 20
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0{
-            return 500
-        }else if indexPath.section == 1{
-            return 420
-        }
-        return 320
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if indexPath.section == 0{
-            let profileSectionCell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell") as! ProfileTableViewCell
-            profileSectionCell.styleUITableViewCell()
-            profileSectionCell.name.text = "Panthro"
-            profileSectionCell.bio.text = "Add a short bio to tell people more about yourself"
-            tableView.separatorStyle = .none
-            profileSectionCell.addBioButton.addTarget(controller?.interactor, action: #selector(controller?.interactor.presentBioScreen), for: .touchUpInside)
-            return profileSectionCell // we can force unwrap here as have already init'd above.
-            
-        }else if indexPath.section == 1{
-            
-            let friendsCell = tableView.dequeueReusableCell(withIdentifier: "FriendsCell") as! FriendsListTableViewCell
-            tableView.separatorStyle = .none
-            friendsCell.styleUITableViewCell()
-            return friendsCell
-        }else{
-            var tableViewCell = tableView.dequeueReusableCell(withIdentifier: "StandardCell")
-            if tableViewCell == nil {
-                tableViewCell = UITableViewCell(style: .default, reuseIdentifier: "StandardCell")
-            }
-            tableView.separatorStyle = .singleLine
-            return tableViewCell!
-        }
-        
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section > 1{
-            let view = UIView()
-            view.frame = CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 100)
-            view.backgroundColor = primaryColour
-            let label = UILabel()
-            label.numberOfLines = 0
-            label.text = "News Feed"
-            label.translatesAutoresizingMaskIntoConstraints = false
-            label.font = UIFont.boldSystemFont(ofSize: mediumBoldFontSize)
-            label.textColor = .white
-            view.addSubview(label)
-            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true
-            label.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-            label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-            return view
-            
-        }
-        return nil
-        
-    }
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return UIView()
-    }
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 10
-    }
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section > 1{
-            return 90
-        }
-        return 0
-    }
-    
     
 }

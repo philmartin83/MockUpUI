@@ -28,15 +28,16 @@ class FriendCollectionViewCell: UICollectionViewCell {
     }()
     
     override func layoutSubviews() {
-        self.addSubview(profileImage)
-        profileImage.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        profileImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 20).isActive = true
+        self.contentView.clipsToBounds = true
+        self.contentView.addSubview(profileImage)
+        profileImage.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor).isActive = true
+        profileImage.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 20).isActive = true
         profileImage.heightAnchor.constraint(equalToConstant: 100).isActive = true
         profileImage.widthAnchor.constraint(equalToConstant: 100).isActive = true
         
-        self.addSubview(friendName)
-        friendName.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        friendName.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        self.contentView.addSubview(friendName)
+        friendName.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor).isActive = true
+        friendName.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor).isActive = true
         friendName.topAnchor.constraint(equalTo: profileImage.bottomAnchor, constant: 20).isActive = true
     }
 }

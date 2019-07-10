@@ -14,9 +14,40 @@ class MainViewInteractor{
     
     @objc func presentBioScreen(sender: UIButton){
         sender.animateButtonPress()
-        let bio = BioViewController()
-        if let controller = viewController?.navController{
-          controller.pushViewController(bio, animated: true)
+        // add a small delay just so we can get the animation effect
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            if let weakSelf = self{
+                let bio = BioViewController()
+                if let controller = weakSelf.viewController?.navController{
+                    controller.pushViewController(bio, animated: true)
+                }
+            }
         }
+    }
+    
+    @objc func settings(sender: UIButton){
+        sender.animateButtonPress()
+    }
+    
+    @objc func loadFullCamera(sender: UIButton){
+        sender.animateButtonPress()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            if let weakSelf = self{
+                let story = StoryViewController()
+                let transition = CATransition()
+                transition.duration = 0.5
+                transition.type = CATransitionType.push
+                transition.subtype = CATransitionSubtype.fromLeft
+                transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+                weakSelf.viewController?.view.window!.layer.add(transition, forKey: kCATransition)
+                weakSelf.viewController?.present(story, animated: false, completion: nil)
+            }
+        }
+       
+    }
+    
+    @objc func loadAllFriends(sender: UIButton){
+        sender.animateButtonPress()
     }
 }
