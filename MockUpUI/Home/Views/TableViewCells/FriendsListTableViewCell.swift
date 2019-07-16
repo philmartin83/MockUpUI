@@ -8,7 +8,9 @@
 
 import UIKit
 
-class FriendsListTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
+class FriendsListTableViewCell: UITableViewCell {
+    
+    var dataSource = HomeCollectionViewDataSource()
 
     lazy var collectionView: UICollectionView = {
         
@@ -105,14 +107,16 @@ class FriendsListTableViewCell: UITableViewCell, UICollectionViewDelegate, UICol
         
         // Add Collection View to hold friends
         self.contentView.addSubview(collectionView)
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        // set our friends of the data source
+        dataSource.friends = friends
+        
+        collectionView.dataSource = dataSource
         collectionView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -10).isActive = true
         collectionView.heightAnchor.constraint(equalToConstant: 200).isActive = true
         collectionView.topAnchor.constraint(equalTo: friendCount.bottomAnchor, constant: 25).isActive = true
         collectionView.register(FriendCollectionViewCell.self, forCellWithReuseIdentifier: "FriendsCollectionCell")
-        collectionView.showsHorizontalScrollIndicator = false // dont watn to show the scoll indicator here.
+        collectionView.showsHorizontalScrollIndicator = false // dont want to show the scoll indicator here.
         
         self.contentView.addSubview(viewAllFriendsButton)
         viewAllFriendsButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20).isActive = true
@@ -123,31 +127,6 @@ class FriendsListTableViewCell: UITableViewCell, UICollectionViewDelegate, UICol
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
-    
-    //MARK:- CollectionView DataSource & Delegate
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return friends.count - 2
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendsCollectionCell", for: indexPath) as! FriendCollectionViewCell
-        let friend = friends[indexPath.row]
-        if let proPic = friend.icon{
-            cell.profileImage.image = proPic
-        }else{
-           cell.profileImage.image = #imageLiteral(resourceName: "Default")
-        }
-        cell.friendName.text = friend.name
-        cell.contentView.backgroundColor = .white
-        cell.styleUICollectionViewCell()
-        return cell
-    }
-
 }

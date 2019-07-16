@@ -11,6 +11,7 @@
 		4A0DB2C122D68FF500BA38D5 /* StorySettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0DB2C022D68FF500BA38D5 /* StorySettingsViewController.swift */; };
 		4A0DB2C322D6900E00BA38D5 /* StorySettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0DB2C222D6900E00BA38D5 /* StorySettingsPresenter.swift */; };
 		4A0DB2C522D690BA00BA38D5 /* StorySettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0DB2C422D690BA00BA38D5 /* StorySettingsInteractor.swift */; };
+		4A493A0D22DE5F36008FFE12 /* HomeCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A493A0C22DE5F36008FFE12 /* HomeCollectionViewDataSource.swift */; };
 		FF1C8C8B22CCC3B600F3A862 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C8C8A22CCC3B600F3A862 /* AppDelegate.swift */; };
 		FF1C8C8D22CCC3B600F3A862 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C8C8C22CCC3B600F3A862 /* ViewController.swift */; };
 		FF1C8C9022CCC3B600F3A862 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1C8C8E22CCC3B600F3A862 /* Main.storyboard */; };
@@ -64,6 +65,7 @@
 		4A0DB2C022D68FF500BA38D5 /* StorySettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorySettingsViewController.swift; sourceTree = "<group>"; };
 		4A0DB2C222D6900E00BA38D5 /* StorySettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorySettingsPresenter.swift; sourceTree = "<group>"; };
 		4A0DB2C422D690BA00BA38D5 /* StorySettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorySettingsInteractor.swift; sourceTree = "<group>"; };
+		4A493A0C22DE5F36008FFE12 /* HomeCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		FF1C8C8722CCC3B600F3A862 /* MockUpUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockUpUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1C8C8A22CCC3B600F3A862 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF1C8C8C22CCC3B600F3A862 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +168,14 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		4A493A0B22DE5F11008FFE12 /* CollectionViewDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				4A493A0C22DE5F36008FFE12 /* HomeCollectionViewDataSource.swift */,
+			);
+			path = CollectionViewDataSource;
+			sourceTree = "<group>";
+		};
 		FF1C8C7E22CCC3B600F3A862 = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +240,7 @@
 		FF1C8CB522CCE6EC00F3A862 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				4A493A0B22DE5F11008FFE12 /* CollectionViewDataSource */,
 				FF763F4C22D6240B00620347 /* TableViewDelegate */,
 				FF763F4B22D623F300620347 /* TableViewDataSource */,
 				FFA0658922D4D40B003B0B60 /* Controller */,
@@ -572,6 +583,7 @@
 				FF763F4E22D6244600620347 /* HomeViewTableViewDelegate.swift in Sources */,
 				4A0DB2C322D6900E00BA38D5 /* StorySettingsPresenter.swift in Sources */,
 				FFA0658F22D4D51B003B0B60 /* BioInteractor.swift in Sources */,
+				4A493A0D22DE5F36008FFE12 /* HomeCollectionViewDataSource.swift in Sources */,
 				FF1C8CC022CD154100F3A862 /* UICollectionViewCellExtension.swift in Sources */,
 				FFA0659622D4D719003B0B60 /* MainViewInteractor.swift in Sources */,
 				FF3DCFCB22CE567600BAC269 /* FriendCollectionViewCell.swift in Sources */,

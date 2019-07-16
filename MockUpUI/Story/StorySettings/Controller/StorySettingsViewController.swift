@@ -28,7 +28,6 @@ class StorySettingsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter.setupNavBar()
-        
     }
     
     override var prefersStatusBarHidden: Bool {

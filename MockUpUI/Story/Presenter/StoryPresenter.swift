@@ -24,13 +24,13 @@ class StoryPresenter: UIView, LayoutProtocol {
         
     }()
     
-    lazy var settingsSutton: UIButton = {
-        let backButton = UIButton(type: .custom)
-        backButton.translatesAutoresizingMaskIntoConstraints = false
+    lazy var settingsButton: UIButton = {
+        let settingsButton = UIButton(type: .custom)
+        settingsButton.translatesAutoresizingMaskIntoConstraints = false
         let backImage = UIImage(named: "Settings")?.withRenderingMode(.alwaysTemplate)
-        backButton.setImage(backImage, for: .normal)
-        backButton.tintColor = .white
-        return backButton
+        settingsButton.setImage(backImage, for: .normal)
+        settingsButton.tintColor = .white
+        return settingsButton
         
     }()
     
@@ -49,6 +49,7 @@ class StoryPresenter: UIView, LayoutProtocol {
                 if let error = error {
                     print(error)
                     // need to add some default code if the camera is not available
+                    // TODO add a default screen
                     weakSelf.setupLayoutWhenCameraIsNotAvailable()
                     return
                 }
@@ -58,12 +59,12 @@ class StoryPresenter: UIView, LayoutProtocol {
            
         }
         addBackButton()
-        self.addSubview(settingsSutton)
-        settingsSutton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30).isActive = true
-        settingsSutton.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        settingsSutton.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        settingsSutton.topAnchor.constraint(equalTo: backButton.topAnchor).isActive = true
-        settingsSutton.addTarget(controller.interactor, action: #selector(controller.interactor.displayStorySettings), for: .touchUpInside)
+        self.addSubview(settingsButton)
+        settingsButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30).isActive = true
+        settingsButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        settingsButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        settingsButton.topAnchor.constraint(equalTo: backButton.topAnchor).isActive = true
+        settingsButton.addTarget(controller.interactor, action: #selector(controller.interactor.displayStorySettings), for: .touchUpInside)
         
     }
     
