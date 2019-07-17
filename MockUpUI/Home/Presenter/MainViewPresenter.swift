@@ -49,20 +49,14 @@ class MainViewPresenter: UIView, NavigationBarProtocol, LayoutProtocol {
     }
     
     func displayLayout(){
-        
-        controller?.view.addSubview(self)
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.leadingAnchor.constraint(equalTo: controller!.view.leadingAnchor).isActive = true
-        self.topAnchor.constraint(equalTo: controller!.view.topAnchor).isActive = true
-        self.bottomAnchor.constraint(equalTo: controller!.view.bottomAnchor).isActive = true
-        self.rightAnchor.constraint(equalTo: controller!.view.rightAnchor).isActive = true
-    
-        self.addSubview(holderView)
+        guard let controller = controller else {return}
+       
+        controller.view.addSubview(holderView)
         holderView.translatesAutoresizingMaskIntoConstraints = false
-        holderView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        holderView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        holderView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        holderView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        holderView.leadingAnchor.constraint(equalTo: controller.view.leadingAnchor).isActive = true
+        holderView.topAnchor.constraint(equalTo: controller.view.topAnchor).isActive = true
+        holderView.bottomAnchor.constraint(equalTo: controller.view.bottomAnchor).isActive = true
+        holderView.rightAnchor.constraint(equalTo: controller.view.rightAnchor).isActive = true
         
         holderView.addSubview(tableView)
         dataSource.controller = controller

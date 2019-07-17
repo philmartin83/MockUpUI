@@ -47,18 +47,11 @@ class BioPresenter: UIView, NavigationBarProtocol, LayoutProtocol{
     
     func displayLayout() {
         guard let controller = controller else {return}
-        controller.view.addSubview(self)
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.leadingAnchor.constraint(equalTo: controller.view.leadingAnchor).isActive = true
-        self.trailingAnchor.constraint(equalTo: controller.view.trailingAnchor).isActive = true
-        self.topAnchor.constraint(equalTo: controller.view.topAnchor).isActive = true
-        self.bottomAnchor.constraint(equalTo: controller.view.bottomAnchor).isActive = true
-        
-        self.addSubview(holderView)
-        holderView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        holderView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        holderView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        holderView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        controller.view.addSubview(holderView)
+        holderView.leadingAnchor.constraint(equalTo: controller.view.leadingAnchor).isActive = true
+        holderView.trailingAnchor.constraint(equalTo: controller.view.trailingAnchor).isActive = true
+        holderView.topAnchor.constraint(equalTo: controller.view.topAnchor).isActive = true
+        holderView.bottomAnchor.constraint(equalTo: controller.view.bottomAnchor).isActive = true
         
     }
 }

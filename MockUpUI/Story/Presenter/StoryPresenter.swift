@@ -37,13 +37,6 @@ class StoryPresenter: UIView, LayoutProtocol {
     func displayLayout() {
         
         guard let controller = controller else {return}
-        controller.view.addSubview(self)
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.leadingAnchor.constraint(equalTo: controller.view.leadingAnchor).isActive = true
-        self.trailingAnchor.constraint(equalTo: controller.view.trailingAnchor).isActive = true
-        self.topAnchor.constraint(equalTo: controller.view.topAnchor).isActive = true
-        self.bottomAnchor.constraint(equalTo: controller.view.bottomAnchor).isActive = true
-        
         cameraController.prepare { [weak self] (error) in
             if let weakSelf = self {
                 if let error = error {
@@ -54,13 +47,13 @@ class StoryPresenter: UIView, LayoutProtocol {
                     return
                 }
                 
-                try? weakSelf.cameraController.displayPreview(on: weakSelf)
+                try? weakSelf.cameraController.displayPreview(on: controller.view)
             }
            
         }
         addBackButton()
-        self.addSubview(settingsButton)
-        settingsButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30).isActive = true
+        controller.view.addSubview(settingsButton)
+        settingsButton.leadingAnchor.constraint(equalTo: controller.view.leadingAnchor, constant: 30).isActive = true
         settingsButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
         settingsButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
         settingsButton.topAnchor.constraint(equalTo: backButton.topAnchor).isActive = true
@@ -70,11 +63,11 @@ class StoryPresenter: UIView, LayoutProtocol {
     
     func addBackButton(){
         guard let controller = controller else {return}
-        self.addSubview(backButton)
-        backButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30).isActive = true
+        controller.view.addSubview(backButton)
+        backButton.trailingAnchor.constraint(equalTo: controller.view.trailingAnchor, constant: -30).isActive = true
         backButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
         backButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        backButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
+        backButton.topAnchor.constraint(equalTo: controller.view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
         backButton.addTarget(controller.interactor, action: #selector(controller.interactor.backToHome), for: .touchUpInside)
     }
     
