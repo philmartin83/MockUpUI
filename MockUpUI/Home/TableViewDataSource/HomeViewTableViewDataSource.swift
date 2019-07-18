@@ -41,7 +41,15 @@ class HomeViewTableViewDataSource: NSObject, UITableViewDataSource {
             let profileSectionCell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell") as! ProfileTableViewCell
             profileSectionCell.styleUITableViewCell()
             profileSectionCell.name.text = "Panthro"
-            profileSectionCell.bio.text = "Add a short bio to tell people more about yourself"
+            let bioString = UserDefaults.standard.string(forKey: bioTextKey)
+            if let bio = bioString, bio.isEmpty{
+                // check if our bio string is empty then add placeholder text
+                profileSectionCell.bio.text = "Add a short bio to tell people more about yourself"
+            }else{
+                // if its not empty add the text
+                profileSectionCell.bio.text = bioString
+            }
+            
             tableView.separatorStyle = .none
             profileSectionCell.addBioButton.addTarget(controller?.interactor, action: #selector(controller?.interactor.presentBioScreen), for: .touchUpInside)
             profileSectionCell.addStoryBtn.addTarget(controller?.interactor, action: #selector(controller?.interactor.loadFullCamera), for: .touchUpInside)
