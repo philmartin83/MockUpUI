@@ -21,6 +21,32 @@ class BioPresenter: UIView, NavigationBarProtocol, LayoutProtocol{
         return holder
     }()
     
+    lazy var bioTextView: UITextView = {
+        let tv = UITextView()
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        tv.layer.borderWidth = 0.1
+        tv.layer.borderColor = lightGray.cgColor
+        return tv
+    }()
+    
+    lazy var saveButton: UIButton = {
+        let saveBtn = UIButton(type: .custom)
+        saveBtn.translatesAutoresizingMaskIntoConstraints = false
+        saveBtn.backgroundColor = primaryColour
+        saveBtn.layer.cornerRadius = buttonCornerRadius
+        saveBtn.setTitle("Save", for: .normal)
+        saveBtn.setTitleColor(.white, for: .normal)
+        saveBtn.contentEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        return saveBtn
+    }()
+    
+    lazy var characterCountLabel: UILabel = {
+        let characterCount = UILabel()
+        characterCount.font = UIFont.systemFont(ofSize: 12)
+        characterCount.textColor = lightGray
+        return characterCount
+    }()
+    
     func setupNavBar() {
         controller?.navController = controller?.navigationController as? BaseNavigationViewController
         controller?.navController?.navigationBar.shadowImage = UIImage()
@@ -52,6 +78,23 @@ class BioPresenter: UIView, NavigationBarProtocol, LayoutProtocol{
         holderView.trailingAnchor.constraint(equalTo: controller.view.trailingAnchor).isActive = true
         holderView.topAnchor.constraint(equalTo: controller.view.topAnchor).isActive = true
         holderView.bottomAnchor.constraint(equalTo: controller.view.bottomAnchor).isActive = true
+        
+        holderView.addSubview(bioTextView)
+        bioTextView.leadingAnchor.constraint(equalTo: holderView.leadingAnchor, constant: 20).isActive = true
+        bioTextView.trailingAnchor.constraint(equalTo: holderView.trailingAnchor, constant: -20).isActive = true
+      
+        bioTextView.topAnchor.constraint(equalTo: holderView.topAnchor, constant: 20).isActive = true
+        bioTextView.heightAnchor.constraint(equalToConstant: 100)
+        
+        holderView.addSubview(characterCountLabel)
+        characterCountLabel.trailingAnchor.constraint(equalTo: bioTextView.trailingAnchor).isActive = true
+        characterCountLabel.topAnchor.constraint(equalTo: bioTextView.bottomAnchor, constant: 15).isActive = true
+        
+        holderView.addSubview(saveButton)
+        saveButton.trailingAnchor.constraint(equalTo: bioTextView.trailingAnchor).isActive = true
+        saveButton.topAnchor.constraint(equalTo: characterCountLabel.bottomAnchor, constant: 15).isActive = true
+        saveButton.widthAnchor.constraint(equalToConstant: 100)
+        saveButton.addTarget(controller.interactor, action: #selector(controller.interactor.saveBio), for: .touchUpInside )
         
     }
 }

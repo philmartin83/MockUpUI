@@ -15,3 +15,4 @@ let boldFontSize: CGFloat = 35
 let mediumBoldFontSize: CGFloat = 25
 let navbarColour = UIColor.colourStringWitHex(hexColour: "3232FF", withAlpha: 1)
 let duration: CFTimeInterval = 0.5
+let lightGray = UIColor.colourStringWitHex(hexColour: "D3D3D3", withAlpha: 1)

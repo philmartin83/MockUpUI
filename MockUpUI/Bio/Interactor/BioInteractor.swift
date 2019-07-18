@@ -15,4 +15,15 @@ class BioInteractor{
     @objc func popviewController(){
         controller?.navController?.popViewController(animated: true)
     }
+    
+    @objc func saveBio (sender: UIButton){
+        sender.animateButtonPress()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            // TODO add some code here but for now we will dismiss
+            // May be add a DB to store the bio or use userdefault?!?!?!?!
+            if let weakSelf = self{
+                weakSelf.popviewController()
+            }
+        }
+    }
 }
