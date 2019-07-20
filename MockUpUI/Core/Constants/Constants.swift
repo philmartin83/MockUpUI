@@ -26,5 +26,10 @@ let bioTextKey = "bioTextKey"
 let bioTextViewplaceHolder = "You can add a shot bio to let people know more about yourself. This be anything from what ever makes you happy to your favourite book."
 let bioTextViewTextLength = 200
 
+//MARK:- Story
+
+let camerButtonsWidthHeight: CGFloat = 30
+let shutterButtonWidthHeight: CGFloat = 60
+
 //MARK:- Helper Constants
 let emptyString = ""

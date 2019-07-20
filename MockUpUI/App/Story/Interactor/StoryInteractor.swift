@@ -11,6 +11,8 @@ import UIKit
 class StoryInteractor{
     weak var controller: StoryViewController?
     
+    var updateFlashState: (()-> Void)?
+    
     @objc func backToHome(sender: UIButton){
         sender.animateButtonPress()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
@@ -38,4 +40,19 @@ class StoryInteractor{
             }
         }
     }
+    
+    @objc func flashState(sender: UIButton){
+        sender.animateButtonPress()
+        updateFlashState?()
+    }
+    
+    @objc func shutterButtonTapper(sender: UIButton){
+        sender.animateButtonPress()
+        // add a weakSelf to stop any potential retain cycles
+        // probably going to move this completion ?!?!?!?!
+        controller?.presenter.cameraController.captureImage(completion: {  (image, error) in
+            print(image as Any)
+        })
+    }
+
 }
