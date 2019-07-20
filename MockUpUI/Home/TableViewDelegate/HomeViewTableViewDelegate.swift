@@ -34,12 +34,7 @@ class HomeViewTableViewDelegate: NSObject, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0{
-            return 500
-        }else if indexPath.section == 1{
-            return 420
-        }
-        return 195
+        return UITableView.automaticDimension
     }
     
     

@@ -26,7 +26,7 @@ class BioTextViewDelegate: NSObject, UITextViewDelegate{
         if updatedText.isEmpty {
             
             textView.text = bioTextViewplaceHolder
-            textView.textColor = UIColor.lightGray
+            textView.textColor = .lightGray
             
             textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
             updateTextViewCountLabel?(0) // send a zero here because we don't have any text other then placeholder text
@@ -37,7 +37,7 @@ class BioTextViewDelegate: NSObject, UITextViewDelegate{
             // the text color to black then set its text to the
             // replacement string
         else if textView.textColor == UIColor.lightGray && !text.isEmpty {
-            textView.textColor = UIColor.black
+            textView.textColor = .black
             textView.text = text
             updateTextViewCountLabel?(textView.text.count)
         }

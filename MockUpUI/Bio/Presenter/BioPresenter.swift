@@ -98,8 +98,9 @@ class BioPresenter: NavigationBarProtocol, LayoutProtocol{
         characterCountLabel.topAnchor.constraint(equalTo: bioTextView.bottomAnchor, constant: 15).isActive = true
         let bioString = UserDefaults.standard.string(forKey: bioTextKey)
         
-        if let bio = bioString, bio.isEmpty{
+        if let bio = bioString{
             bioTextView.text = bio
+            bioTextView.textColor = .black
         }
         
         provideCounterLabelWithData(value: bioString?.count)

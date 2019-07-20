@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileTableViewCell: UITableViewCell {
+class ProfileTableViewCell: UITableViewCell, TableViewCellProtocol {
     
     var profileImage: UIImageView = {
         let imV = UIImageView()
@@ -76,43 +76,55 @@ class ProfileTableViewCell: UITableViewCell {
         settingsBtn.layer.cornerRadius = buttonCornerRadius
         return settingsBtn
     }()
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        layoutTableViewCell()
+    }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     override func layoutSubviews() {
-        self.contentView.clipsToBounds = true
+        super.layoutSubviews()
+        layoutTableViewCell()
+    }
+    
+    func layoutTableViewCell(){
         self.contentView.addSubview(profileImage)
-        profileImage.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor).isActive = true
+        profileImage.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         profileImage.widthAnchor.constraint(equalToConstant: 240).isActive = true
         profileImage.heightAnchor.constraint(equalToConstant: 240).isActive = true
-        profileImage.topAnchor.constraint(greaterThanOrEqualTo: self.topAnchor, constant: 15).isActive = true
+        profileImage.topAnchor.constraint(greaterThanOrEqualTo: contentView.topAnchor, constant: 15).isActive = true
         profileImage.image = #imageLiteral(resourceName: "Profile")
         
         self.contentView.addSubview(name)
-        name.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor).isActive = true
-        name.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor).isActive = true
+        name.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        name.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         name.topAnchor.constraint(equalTo: profileImage.bottomAnchor, constant: 15).isActive = true
-        
+
         self.contentView.addSubview(bio)
-        bio.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20).isActive = true
-        bio.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20).isActive = true
+        bio.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
+        bio.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
         bio.topAnchor.constraint(equalTo: name.bottomAnchor, constant: 15).isActive = true
-        
+
         self.contentView.addSubview(addBioButton)
-        addBioButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20).isActive = true
-        addBioButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20).isActive = true
+        addBioButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
+        addBioButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
         addBioButton.topAnchor.constraint(equalTo: bio.bottomAnchor, constant: 15).isActive = true
         addBioButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
+
         self.contentView.addSubview(addStoryBtn)
         addStoryBtn.leadingAnchor.constraint(equalTo: addBioButton.leadingAnchor).isActive = true
         addStoryBtn.widthAnchor.constraint(equalToConstant: 200).isActive = true
         addStoryBtn.topAnchor.constraint(equalTo: addBioButton.bottomAnchor, constant: 15).isActive = true
         addStoryBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
+
         self.contentView.addSubview(profileSettingsButton)
         profileSettingsButton.leftAnchor.constraint(equalTo: addStoryBtn.rightAnchor, constant: 15).isActive = true
         profileSettingsButton.trailingAnchor.constraint(equalTo: addBioButton.trailingAnchor).isActive = true
         profileSettingsButton.topAnchor.constraint(equalTo: addStoryBtn.topAnchor).isActive = true
         profileSettingsButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-    
+        profileSettingsButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
     }
 }

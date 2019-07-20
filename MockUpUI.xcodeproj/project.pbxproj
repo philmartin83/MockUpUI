@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A0D4C6722E31EBB002F0A89 /* TableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D4C6622E31EBB002F0A89 /* TableViewCellProtocol.swift */; };
 		4A0DB2BB22D68AFB00BA38D5 /* StoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0DB2BA22D68AFB00BA38D5 /* StoryInteractor.swift */; };
 		4A0DB2C122D68FF500BA38D5 /* StorySettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0DB2C022D68FF500BA38D5 /* StorySettingsViewController.swift */; };
 		4A0DB2C322D6900E00BA38D5 /* StorySettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0DB2C222D6900E00BA38D5 /* StorySettingsPresenter.swift */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A0D4C6622E31EBB002F0A89 /* TableViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellProtocol.swift; sourceTree = "<group>"; };
 		4A0DB2BA22D68AFB00BA38D5 /* StoryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryInteractor.swift; sourceTree = "<group>"; };
 		4A0DB2C022D68FF500BA38D5 /* StorySettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorySettingsViewController.swift; sourceTree = "<group>"; };
 		4A0DB2C222D6900E00BA38D5 /* StorySettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorySettingsPresenter.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 			children = (
 				FF485C3C22CF6E4E00993196 /* NavigationBarProtocol.swift */,
 				FFA0659222D4D6A6003B0B60 /* LayoutProtocol.swift */,
+				4A0D4C6622E31EBB002F0A89 /* TableViewCellProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				4A0DB2C122D68FF500BA38D5 /* StorySettingsViewController.swift in Sources */,
 				FF1C8C8D22CCC3B600F3A862 /* ViewController.swift in Sources */,
 				FFA0659122D4D5F8003B0B60 /* BioViewController.swift in Sources */,
+				4A0D4C6722E31EBB002F0A89 /* TableViewCellProtocol.swift in Sources */,
 				4A0DB2C522D690BA00BA38D5 /* StorySettingsInteractor.swift in Sources */,
 				4A0DB2BB22D68AFB00BA38D5 /* StoryInteractor.swift in Sources */,
 				FF1C8CB122CCDCF400F3A862 /* ProfileTableViewCell.swift in Sources */,

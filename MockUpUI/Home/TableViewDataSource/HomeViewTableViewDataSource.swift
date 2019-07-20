@@ -27,11 +27,8 @@ class HomeViewTableViewDataSource: NSObject, UITableViewDataSource {
         if section == 0 || section == 1{
             return 1
         }else{
-            if let feedArray = feedArray{
-                return feedArray.count
-            }
-            return 0
-           
+            guard let feedArray = feedArray else {return 0}
+            return feedArray.count
         }
     }
 
@@ -42,12 +39,12 @@ class HomeViewTableViewDataSource: NSObject, UITableViewDataSource {
             profileSectionCell.styleUITableViewCell()
             profileSectionCell.name.text = "Panthro"
             let bioString = UserDefaults.standard.string(forKey: bioTextKey)
-            if let bio = bioString, bio.isEmpty{
-                // check if our bio string is empty then add placeholder text
-                profileSectionCell.bio.text = defualtBioTextForHomeScreen
+            if let bio = bioString{
+                // if its not nil add the text
+                profileSectionCell.bio.text = bio
             }else{
-                // if its not empty add the text
-                profileSectionCell.bio.text = bioString
+                // check if our bio string is nil and add default place holder text.
+                profileSectionCell.bio.text = defualtBioTextForHomeScreen
             }
             
             tableView.separatorStyle = .none

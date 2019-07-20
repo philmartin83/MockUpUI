@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsFeedTableViewCell: UITableViewCell {
+class NewsFeedTableViewCell: UITableViewCell, TableViewCellProtocol {
     
     lazy var feedImage: UIImageView = {
         let image = UIImageView()
@@ -34,30 +34,41 @@ class NewsFeedTableViewCell: UITableViewCell {
         
         return view
     }()
-
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        layoutTableViewCell()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func layoutSubviews() {
-        
-        self.contentView.addSubview(feedImage)
-        feedImage.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 15).isActive = true
-        feedImage.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -15).isActive = true
-        feedImage.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 15).isActive = true
+        super.layoutSubviews()
+        layoutTableViewCell()
+    }
+    
+    func layoutTableViewCell() {
+        contentView.addSubview(feedImage)
+        feedImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15).isActive = true
+        feedImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15).isActive = true
+        feedImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15).isActive = true
         feedImage.heightAnchor.constraint(equalToConstant: 130).isActive = true
-        self.contentView.addSubview(feedTitle)
+        contentView.addSubview(feedTitle)
         feedTitle.leadingAnchor.constraint(equalTo: feedImage.leadingAnchor).isActive = true
         feedTitle.trailingAnchor.constraint(equalTo: feedImage.trailingAnchor).isActive = true
         feedTitle.topAnchor.constraint(equalTo: feedImage.bottomAnchor, constant: 15).isActive = true
         
-        self.contentView.addSubview(divider)
-        divider.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        divider.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        divider.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        contentView.addSubview(divider)
+        divider.topAnchor.constraint(equalTo: feedTitle.bottomAnchor, constant: 15).isActive = true
+        divider.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        divider.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         divider.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        
+        divider.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 

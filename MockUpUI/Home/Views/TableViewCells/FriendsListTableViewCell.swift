@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FriendsListTableViewCell: UITableViewCell {
+class FriendsListTableViewCell: UITableViewCell, TableViewCellProtocol {
     
     var dataSource = HomeCollectionViewDataSource()
 
@@ -83,19 +83,31 @@ class FriendsListTableViewCell: UITableViewCell {
         return seeAllFriends
     }()
     
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        layoutTableViewCell()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func layoutSubviews() {
         // Add our title label
-        
+        super.layoutSubviews()
+        layoutTableViewCell()
+    }
+    
+    func layoutTableViewCell() {
         self.contentView.clipsToBounds = true
         self.contentView.addSubview(titleLabel)
-        titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 15).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 15).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15).isActive = true
         titleLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
         
         self.contentView.addSubview(findFriendsButton)
         findFriendsButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
-        findFriendsButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
+        findFriendsButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
         
         // Add out friend count label
         self.contentView.addSubview(friendCount)
@@ -111,18 +123,19 @@ class FriendsListTableViewCell: UITableViewCell {
         dataSource.friends = friends
         
         collectionView.dataSource = dataSource
-        collectionView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -10).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
         collectionView.heightAnchor.constraint(equalToConstant: 200).isActive = true
         collectionView.topAnchor.constraint(equalTo: friendCount.bottomAnchor, constant: 25).isActive = true
         collectionView.register(FriendCollectionViewCell.self, forCellWithReuseIdentifier: "FriendsCollectionCell")
         collectionView.showsHorizontalScrollIndicator = false // dont want to show the scoll indicator here.
         
         self.contentView.addSubview(viewAllFriendsButton)
-        viewAllFriendsButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20).isActive = true
-        viewAllFriendsButton.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20).isActive = true
+        viewAllFriendsButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
+        viewAllFriendsButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
         viewAllFriendsButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         viewAllFriendsButton.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 20).isActive = true
+        viewAllFriendsButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

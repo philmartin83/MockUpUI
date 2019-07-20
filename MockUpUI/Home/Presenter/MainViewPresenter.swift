@@ -79,7 +79,6 @@ class MainViewPresenter: UIView, NavigationBarProtocol, LayoutProtocol {
         tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: "ProfileCell")
         tableView.register(FriendsListTableViewCell.self, forCellReuseIdentifier: "FriendsCell")
         tableView.register(NewsFeedTableViewCell.self, forCellReuseIdentifier: "NewsFeed")
-    
     }
     
 }
