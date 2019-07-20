@@ -130,6 +130,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A0D4C6822E32542002F0A89 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FF1C8CB522CCE6EC00F3A862 /* Home */,
+				FFA0658722D4D3C5003B0B60 /* Bio */,
+				FF763F5122D646D300620347 /* Story */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4A0D4C6922E3255D002F0A89 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FF763F4222D61E0200620347 /* MockedJSON */,
+				FFA0658422D4CA98003B0B60 /* Constants */,
+				FF485C3B22CF6E3400993196 /* Protocol */,
+				FF3DCFC722CE526800BAC269 /* Models */,
+				FF1C8CB422CCE66200F3A862 /* Extensions */,
+				FF1C8CB822CCE72700F3A862 /* BaseViewControllers */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		4A0DB2B922D68AE700BA38D5 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,15 +224,8 @@
 		FF1C8C8922CCC3B600F3A862 /* MockUpUI */ = {
 			isa = PBXGroup;
 			children = (
-				FF763F4222D61E0200620347 /* MockedJSON */,
-				FFA0658722D4D3C5003B0B60 /* Bio */,
-				FFA0658422D4CA98003B0B60 /* Constants */,
-				FF485C3B22CF6E3400993196 /* Protocol */,
-				FF3DCFC722CE526800BAC269 /* Models */,
-				FF1C8CB822CCE72700F3A862 /* BaseViewControllers */,
-				FF763F5122D646D300620347 /* Story */,
-				FF1C8CB522CCE6EC00F3A862 /* Home */,
-				FF1C8CB422CCE66200F3A862 /* Extensions */,
+				4A0D4C6922E3255D002F0A89 /* Core */,
+				4A0D4C6822E32542002F0A89 /* App */,
 				FF1C8C8A22CCC3B600F3A862 /* AppDelegate.swift */,
 				FF1C8C8E22CCC3B600F3A862 /* Main.storyboard */,
 				FF1C8C9122CCC3B800F3A862 /* Assets.xcassets */,
