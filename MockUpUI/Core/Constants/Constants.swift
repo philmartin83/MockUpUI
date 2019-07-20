@@ -25,3 +25,6 @@ let defualtBioTextForHomeScreen = "Add a short bio to tell people more about you
 let bioTextKey = "bioTextKey"
 let bioTextViewplaceHolder = "You can add a shot bio to let people know more about yourself. This be anything from what ever makes you happy to your favourite book."
 let bioTextViewTextLength = 200
+
+//MARK:- Helper Constants
+let emptyString = ""

@@ -21,7 +21,7 @@ class StoryInteractor{
                 transition.subtype = CATransitionSubtype.fromRight
                 transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
                 weakSelf.controller?.view.window!.layer.add(transition, forKey: kCATransition)
-                weakSelf.controller?.dismiss(animated: true, completion: nil)
+                weakSelf.controller?.dismiss(animated: false, completion: nil)
             }
         }
     }

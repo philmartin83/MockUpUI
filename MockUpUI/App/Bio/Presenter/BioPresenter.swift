@@ -30,6 +30,7 @@ class BioPresenter: NavigationBarProtocol, LayoutProtocol{
         tv.textColor = UIColor.lightGray
         tv.layer.borderColor = lightGray.cgColor
         tv.layer.cornerRadius = 10
+        tv.font = UIFont.systemFont(ofSize: 15)
         return tv
     }()
     
