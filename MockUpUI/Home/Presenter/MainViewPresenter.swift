@@ -46,11 +46,12 @@ class MainViewPresenter: UIView, NavigationBarProtocol, LayoutProtocol {
         controller?.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: label)
         controller?.navController?.leftTitleLabel.textColor = .white
         controller?.navController?.leftTitleLabel.text = "My Social App"
+        // refresh our tableView
+        tableView.reloadData()
     }
     
     func displayLayout(){
         guard let controller = controller else {return}
-       
         controller.view.addSubview(holderView)
         holderView.translatesAutoresizingMaskIntoConstraints = false
         holderView.leadingAnchor.constraint(equalTo: controller.view.leadingAnchor).isActive = true

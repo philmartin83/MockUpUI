@@ -29,6 +29,7 @@
 		FF1C8CC022CD154100F3A862 /* UICollectionViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C8CBF22CD154100F3A862 /* UICollectionViewCellExtension.swift */; };
 		FF3DCFC922CE527400BAC269 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3DCFC822CE527400BAC269 /* File.swift */; };
 		FF3DCFCB22CE567600BAC269 /* FriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3DCFCA22CE567600BAC269 /* FriendCollectionViewCell.swift */; };
+		FF40F96322E2257C008BDA2F /* BioTextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF40F96222E2257C008BDA2F /* BioTextViewDelegate.swift */; };
 		FF485C3D22CF6E4E00993196 /* NavigationBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF485C3C22CF6E4E00993196 /* NavigationBarProtocol.swift */; };
 		FF763F4422D61E1400620347 /* demo.json in Resources */ = {isa = PBXBuildFile; fileRef = FF763F4322D61E1400620347 /* demo.json */; };
 		FF763F4622D61E2D00620347 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF763F4522D61E2D00620347 /* Feed.swift */; };
@@ -87,6 +88,7 @@
 		FF1C8CBF22CD154100F3A862 /* UICollectionViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCellExtension.swift; sourceTree = "<group>"; };
 		FF3DCFC822CE527400BAC269 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		FF3DCFCA22CE567600BAC269 /* FriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewCell.swift; sourceTree = "<group>"; };
+		FF40F96222E2257C008BDA2F /* BioTextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioTextViewDelegate.swift; sourceTree = "<group>"; };
 		FF485C3C22CF6E4E00993196 /* NavigationBarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarProtocol.swift; sourceTree = "<group>"; };
 		FF763F4322D61E1400620347 /* demo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = demo.json; sourceTree = "<group>"; };
 		FF763F4522D61E2D00620347 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
@@ -303,6 +305,14 @@
 			path = TableViewCells;
 			sourceTree = "<group>";
 		};
+		FF40F96122E22550008BDA2F /* BioTextViewDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				FF40F96222E2257C008BDA2F /* BioTextViewDelegate.swift */,
+			);
+			path = BioTextViewDelegate;
+			sourceTree = "<group>";
+		};
 		FF485C3B22CF6E3400993196 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,6 +420,7 @@
 		FFA0658722D4D3C5003B0B60 /* Bio */ = {
 			isa = PBXGroup;
 			children = (
+				FF40F96122E22550008BDA2F /* BioTextViewDelegate */,
 				FFA0658B22D4D4A1003B0B60 /* Presenter */,
 				FFA0658A22D4D416003B0B60 /* Interactor */,
 				FFA0658822D4D402003B0B60 /* Controller */,
@@ -578,6 +589,7 @@
 				FF1C8C8B22CCC3B600F3A862 /* AppDelegate.swift in Sources */,
 				FF763F4622D61E2D00620347 /* Feed.swift in Sources */,
 				FFA0658222D4C86E003B0B60 /* UIButtonExtension.swift in Sources */,
+				FF40F96322E2257C008BDA2F /* BioTextViewDelegate.swift in Sources */,
 				FF763F4A22D623A800620347 /* HomeViewTableViewDataSource.swift in Sources */,
 				FF1C8CBA22CD036E00F3A862 /* UIImageExtension.swift in Sources */,
 				FF763F4E22D6244600620347 /* HomeViewTableViewDelegate.swift in Sources */,

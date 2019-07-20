@@ -44,7 +44,7 @@ class HomeViewTableViewDataSource: NSObject, UITableViewDataSource {
             let bioString = UserDefaults.standard.string(forKey: bioTextKey)
             if let bio = bioString, bio.isEmpty{
                 // check if our bio string is empty then add placeholder text
-                profileSectionCell.bio.text = "Add a short bio to tell people more about yourself"
+                profileSectionCell.bio.text = defualtBioTextForHomeScreen
             }else{
                 // if its not empty add the text
                 profileSectionCell.bio.text = bioString

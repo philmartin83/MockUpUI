@@ -19,12 +19,11 @@ class BioInteractor{
     @objc func saveBio (sender: UIButton){
         // Animate the button press
         sender.animateButtonPress()
+        // maybe add the bio to database, real world app would send to server
+        UserDefaults.standard.set(controller?.presenter.bioTextView.text, forKey: bioTextKey)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
             if let weakSelf = self{
                 weakSelf.popviewController()
-                // maybe add the bio to database, real world app would send to server
-                UserDefaults.standard.set(weakSelf.controller?.presenter.bioTextView.text, forKey: bioTextKey)
-
             }
         }
     }

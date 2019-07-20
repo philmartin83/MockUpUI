@@ -8,9 +8,10 @@
 
 import UIKit
 
-class BioPresenter: UIView, NavigationBarProtocol, LayoutProtocol{
+class BioPresenter: NavigationBarProtocol, LayoutProtocol{
     
     weak var controller: BioViewController?
+    var tvDelegate = BioTextViewDelegate()
     
     var holderView: UIView = {
         let holder = UIView()
@@ -24,8 +25,11 @@ class BioPresenter: UIView, NavigationBarProtocol, LayoutProtocol{
     lazy var bioTextView: UITextView = {
         let tv = UITextView()
         tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.layer.borderWidth = 0.1
+        tv.layer.borderWidth = 1.5
+        tv.text = bioTextViewplaceHolder
+        tv.textColor = UIColor.lightGray
         tv.layer.borderColor = lightGray.cgColor
+        tv.layer.cornerRadius = 10
         return tv
     }()
     
@@ -42,8 +46,9 @@ class BioPresenter: UIView, NavigationBarProtocol, LayoutProtocol{
     
     lazy var characterCountLabel: UILabel = {
         let characterCount = UILabel()
-        characterCount.font = UIFont.systemFont(ofSize: 12)
+        characterCount.font = UIFont.boldSystemFont(ofSize: 13)
         characterCount.textColor = lightGray
+        characterCount.translatesAutoresizingMaskIntoConstraints = false
         return characterCount
     }()
     
@@ -79,22 +84,43 @@ class BioPresenter: UIView, NavigationBarProtocol, LayoutProtocol{
         holderView.topAnchor.constraint(equalTo: controller.view.topAnchor).isActive = true
         holderView.bottomAnchor.constraint(equalTo: controller.view.bottomAnchor).isActive = true
         
+        tvDelegate.parentView = controller.view
+        bioTextView.delegate = tvDelegate
         holderView.addSubview(bioTextView)
         bioTextView.leadingAnchor.constraint(equalTo: holderView.leadingAnchor, constant: 20).isActive = true
         bioTextView.trailingAnchor.constraint(equalTo: holderView.trailingAnchor, constant: -20).isActive = true
       
         bioTextView.topAnchor.constraint(equalTo: holderView.topAnchor, constant: 20).isActive = true
-        bioTextView.heightAnchor.constraint(equalToConstant: 100)
+        bioTextView.heightAnchor.constraint(equalToConstant: 150).isActive = true
         
         holderView.addSubview(characterCountLabel)
         characterCountLabel.trailingAnchor.constraint(equalTo: bioTextView.trailingAnchor).isActive = true
         characterCountLabel.topAnchor.constraint(equalTo: bioTextView.bottomAnchor, constant: 15).isActive = true
+        let bioString = UserDefaults.standard.string(forKey: bioTextKey)
+        
+        if let bio = bioString, bio.isEmpty{
+            bioTextView.text = bio
+        }
+        
+        provideCounterLabelWithData(value: bioString?.count)
+        
+        // listen to textView updates so we can update the textview character count
+        tvDelegate.updateTextViewCountLabel = { [weak self] (value) in
+            if let weakSelf = self{
+                weakSelf.provideCounterLabelWithData(value: value)
+            }
+        }
         
         holderView.addSubview(saveButton)
         saveButton.trailingAnchor.constraint(equalTo: bioTextView.trailingAnchor).isActive = true
         saveButton.topAnchor.constraint(equalTo: characterCountLabel.bottomAnchor, constant: 15).isActive = true
-        saveButton.widthAnchor.constraint(equalToConstant: 100)
+        saveButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         saveButton.addTarget(controller.interactor, action: #selector(controller.interactor.saveBio), for: .touchUpInside )
         
     }
+    
+    func provideCounterLabelWithData(value: Int?){
+         characterCountLabel.text = "\(value ?? 0) \\ \(bioTextViewTextLength)"
+    }
+    
 }
