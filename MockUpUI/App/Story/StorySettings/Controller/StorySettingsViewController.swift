@@ -12,7 +12,7 @@ class StorySettingsViewController: UIViewController {
     
     var presenter = StorySettingsPresenter()
     var interactor = StorySettingsInteractor()
-    var navController: BaseNavigationViewController?
+    weak var navController: BaseNavigationViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -37,6 +37,9 @@ class NewsFeedTableViewCell: UITableViewCell, TableViewCellProtocol {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        contentView.addSubview(feedImage)
+        contentView.addSubview(feedTitle)
+        contentView.addSubview(divider)
         layoutTableViewCell()
     }
     
@@ -50,17 +53,16 @@ class NewsFeedTableViewCell: UITableViewCell, TableViewCellProtocol {
     }
     
     func layoutTableViewCell() {
-        contentView.addSubview(feedImage)
+       
         feedImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15).isActive = true
         feedImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15).isActive = true
         feedImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15).isActive = true
         feedImage.heightAnchor.constraint(equalToConstant: 130).isActive = true
-        contentView.addSubview(feedTitle)
+   
         feedTitle.leadingAnchor.constraint(equalTo: feedImage.leadingAnchor).isActive = true
         feedTitle.trailingAnchor.constraint(equalTo: feedImage.trailingAnchor).isActive = true
         feedTitle.topAnchor.constraint(equalTo: feedImage.bottomAnchor, constant: 15).isActive = true
-        
-        contentView.addSubview(divider)
+
         divider.topAnchor.constraint(equalTo: feedTitle.bottomAnchor, constant: 15).isActive = true
         divider.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         divider.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true

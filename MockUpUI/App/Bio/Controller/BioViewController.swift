@@ -10,7 +10,7 @@ import UIKit
 
 class BioViewController: UIViewController {
 
-    var navController: BaseNavigationViewController?
+    weak var navController: BaseNavigationViewController?
     var presenter = BioPresenter()
     var interactor = BioInteractor()
     override func viewDidLoad() {

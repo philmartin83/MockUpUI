@@ -85,6 +85,16 @@ class FriendsListTableViewCell: UITableViewCell, TableViewCellProtocol {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        self.contentView.clipsToBounds = true
+        self.contentView.addSubview(titleLabel)
+        self.contentView.addSubview(findFriendsButton)
+        // Add out friend count label
+        self.contentView.addSubview(friendCount)
+        // Add Collection View to hold friends
+        self.contentView.addSubview(collectionView)
+        
+        self.contentView.addSubview(viewAllFriendsButton)
         layoutTableViewCell()
     }
     
@@ -99,26 +109,20 @@ class FriendsListTableViewCell: UITableViewCell, TableViewCellProtocol {
     }
     
     func layoutTableViewCell() {
-        self.contentView.clipsToBounds = true
-        self.contentView.addSubview(titleLabel)
+
         titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15).isActive = true
         titleLabel.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        
-        self.contentView.addSubview(findFriendsButton)
+    
         findFriendsButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
         findFriendsButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
-        
-        // Add out friend count label
-        self.contentView.addSubview(friendCount)
+    
         friendCount.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
         friendCount.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
         friendCount.widthAnchor.constraint(equalToConstant: 120).isActive = true
         // we could do a check here to check for 1 friend of friends
         friendCount.text = "\(friends.count) Friends"
         
-        // Add Collection View to hold friends
-        self.contentView.addSubview(collectionView)
         // set our friends of the data source
         dataSource.friends = friends
         
@@ -129,8 +133,7 @@ class FriendsListTableViewCell: UITableViewCell, TableViewCellProtocol {
         collectionView.topAnchor.constraint(equalTo: friendCount.bottomAnchor, constant: 25).isActive = true
         collectionView.register(FriendCollectionViewCell.self, forCellWithReuseIdentifier: "FriendsCollectionCell")
         collectionView.showsHorizontalScrollIndicator = false // dont want to show the scoll indicator here.
-        
-        self.contentView.addSubview(viewAllFriendsButton)
+
         viewAllFriendsButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
         viewAllFriendsButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
         viewAllFriendsButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
