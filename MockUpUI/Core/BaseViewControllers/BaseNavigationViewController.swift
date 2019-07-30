@@ -36,6 +36,8 @@ class BaseNavigationViewController: UINavigationController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationBar.shadowImage = UIImage()
+        navigationItem.hidesBackButton = true
         navigationBar.isTranslucent = false
         interactivePopGestureRecognizer?.delegate = nil;
     }

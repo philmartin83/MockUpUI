@@ -55,8 +55,6 @@ class BioPresenter: NavigationBarProtocol, LayoutProtocol{
     
     func setupNavBar() {
         controller?.navController = controller?.navigationController as? BaseNavigationViewController
-        controller?.navController?.navigationBar.shadowImage = UIImage()
-        controller?.navController?.navigationItem.hidesBackButton = true
         guard let label = controller?.navController?.leftTitleLabel else {return}
         guard let button = controller?.navController?.backButton else {return}
         button.heightAnchor.constraint(equalToConstant: 25).isActive = true

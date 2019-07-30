@@ -36,8 +36,6 @@ class MainViewPresenter: UIView, NavigationBarProtocol, LayoutProtocol {
     func setupNavBar(){
         
         controller?.navController = controller?.navigationController as? BaseNavigationViewController
-        controller?.navController?.navigationBar.shadowImage = UIImage()
-        
         if let navController = controller?.navController {
             navController.navigationBar.barTintColor = navbarColour
         }
