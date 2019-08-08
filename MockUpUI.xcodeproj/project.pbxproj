@@ -43,6 +43,8 @@
 		FF763F5C22D6484300620347 /* CameraControllerEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF763F5B22D6484300620347 /* CameraControllerEnum.swift */; };
 		FF763F5E22D64AE100620347 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF763F5D22D64AE100620347 /* StoryViewController.swift */; };
 		FF763F6022D64AEF00620347 /* StoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF763F5F22D64AEF00620347 /* StoryPresenter.swift */; };
+		FF8F063822FC720400F20E63 /* PrivacySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8F063722FC720400F20E63 /* PrivacySettings.swift */; };
+		FF8F063C22FC7F5E00F20E63 /* PrivacyListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8F063B22FC7F5E00F20E63 /* PrivacyListRowView.swift */; };
 		FFA0658222D4C86E003B0B60 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0658122D4C86E003B0B60 /* UIButtonExtension.swift */; };
 		FFA0658622D4CAA7003B0B60 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0658522D4CAA7003B0B60 /* Constants.swift */; };
 		FFA0658D22D4D4D9003B0B60 /* BioPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0658C22D4D4D9003B0B60 /* BioPresenter.swift */; };
@@ -103,6 +105,8 @@
 		FF763F5B22D6484300620347 /* CameraControllerEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControllerEnum.swift; sourceTree = "<group>"; };
 		FF763F5D22D64AE100620347 /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		FF763F5F22D64AEF00620347 /* StoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPresenter.swift; sourceTree = "<group>"; };
+		FF8F063722FC720400F20E63 /* PrivacySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacySettings.swift; sourceTree = "<group>"; };
+		FF8F063B22FC7F5E00F20E63 /* PrivacyListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyListRowView.swift; sourceTree = "<group>"; };
 		FFA0658122D4C86E003B0B60 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		FFA0658522D4CAA7003B0B60 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FFA0658C22D4D4D9003B0B60 /* BioPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioPresenter.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 		4A0DB2BC22D68FC200BA38D5 /* StorySettings */ = {
 			isa = PBXGroup;
 			children = (
+				FF8F063422FC6F0000F20E63 /* PrivacySettings */,
 				4A0DB2BF22D68FDE00BA38D5 /* Interactor */,
 				4A0DB2BE22D68FD400BA38D5 /* Presenter */,
 				4A0DB2BD22D68FCB00BA38D5 /* Controller */,
@@ -420,6 +425,31 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
+		FF8F063422FC6F0000F20E63 /* PrivacySettings */ = {
+			isa = PBXGroup;
+			children = (
+				FF8F063622FC71F000F20E63 /* Model */,
+				FF8F063522FC70C400F20E63 /* Presentor */,
+			);
+			path = PrivacySettings;
+			sourceTree = "<group>";
+		};
+		FF8F063522FC70C400F20E63 /* Presentor */ = {
+			isa = PBXGroup;
+			children = (
+				FF8F063B22FC7F5E00F20E63 /* PrivacyListRowView.swift */,
+			);
+			path = Presentor;
+			sourceTree = "<group>";
+		};
+		FF8F063622FC71F000F20E63 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF8F063722FC720400F20E63 /* PrivacySettings.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FFA0658322D4C889003B0B60 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -581,7 +611,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF8F063C22FC7F5E00F20E63 /* PrivacyListRowView.swift in Sources */,
 				FF763F5E22D64AE100620347 /* StoryViewController.swift in Sources */,
+				FF8F063822FC720400F20E63 /* PrivacySettings.swift in Sources */,
 				FF763F5522D6476D00620347 /* CameraController.swift in Sources */,
 				FF1C8CAF22CCD01B00F3A862 /* UIViewExtension.swift in Sources */,
 				FF3DCFC922CE527400BAC269 /* File.swift in Sources */,
