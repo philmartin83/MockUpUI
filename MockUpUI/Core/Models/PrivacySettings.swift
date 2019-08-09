@@ -12,10 +12,14 @@ class PrivacySettings{
     var title: String?
     var icon: UIImage?
     var subtitle: String?
+    var accessoryType: PrivacyAccessoryType?
+    var selected: Bool = false
     
-    init(title: String, icon: UIImage, subtitle: String) {
+    init(title: String, icon: UIImage?, subtitle: String?, accessoryType: PrivacyAccessoryType, selected: Bool) {
         self.title = title
         self.icon = icon
         self.subtitle = subtitle
+        self.accessoryType = accessoryType
+        self.selected = selected
     }
 }

@@ -12,10 +12,11 @@ import Foundation
 
 class MainViewPresenter: UIView, NavigationBarProtocol, LayoutProtocol {
     
-    
+    //MARK:- Provate Properties
     fileprivate let dataSource = HomeViewTableViewDataSource()
     fileprivate let delegate = HomeViewTableViewDelegate()
     
+    //MARK:- Properties
     weak var controller: ViewController?
     lazy var tableView: UITableView = {
         let tV = UITableView()
@@ -33,6 +34,14 @@ class MainViewPresenter: UIView, NavigationBarProtocol, LayoutProtocol {
         return view
     }()
     
+    //MARK:- Protocol
+    func displayLayout(){
+        setupHolderView()
+        setupDataSource()
+        setupTableView()
+    }
+    
+    //MARK:- Setup Views
     func setupNavBar(){
         
         controller?.navController = controller?.navigationController as? BaseNavigationViewController
@@ -48,7 +57,7 @@ class MainViewPresenter: UIView, NavigationBarProtocol, LayoutProtocol {
         tableView.reloadData()
     }
     
-    func displayLayout(){
+    func setupHolderView(){
         guard let controller = controller else {return}
         controller.view.addSubview(holderView)
         holderView.translatesAutoresizingMaskIntoConstraints = false
@@ -57,7 +66,9 @@ class MainViewPresenter: UIView, NavigationBarProtocol, LayoutProtocol {
         holderView.bottomAnchor.constraint(equalTo: controller.view.bottomAnchor).isActive = true
         holderView.rightAnchor.constraint(equalTo: controller.view.rightAnchor).isActive = true
         
-        holderView.addSubview(tableView)
+    }
+    
+    func setupDataSource(){
         dataSource.controller = controller
         dataSource.fetchData()
         
@@ -66,6 +77,10 @@ class MainViewPresenter: UIView, NavigationBarProtocol, LayoutProtocol {
                 weakSelf.tableView.reloadData()
             }
         }
+    }
+    
+    func setupTableView(){
+        holderView.addSubview(tableView)
         tableView.delegate = delegate
         tableView.dataSource = dataSource
         tableView.leadingAnchor.constraint(equalTo: holderView.leadingAnchor).isActive = true
@@ -78,5 +93,4 @@ class MainViewPresenter: UIView, NavigationBarProtocol, LayoutProtocol {
         tableView.register(FriendsListTableViewCell.self, forCellReuseIdentifier: "FriendsCell")
         tableView.register(NewsFeedTableViewCell.self, forCellReuseIdentifier: "NewsFeed")
     }
-    
 }

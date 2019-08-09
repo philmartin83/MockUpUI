@@ -28,6 +28,7 @@
 		FF1C8CBC22CD07C200F3A862 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C8CBB22CD07C200F3A862 /* UIColorExtension.swift */; };
 		FF1C8CBE22CD0B1700F3A862 /* FriendsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C8CBD22CD0B1700F3A862 /* FriendsListTableViewCell.swift */; };
 		FF1C8CC022CD154100F3A862 /* UICollectionViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C8CBF22CD154100F3A862 /* UICollectionViewCellExtension.swift */; };
+		FF2AF7EF22FDA6E300815C59 /* PrivacyAccessoryTyp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2AF7EE22FDA6E300815C59 /* PrivacyAccessoryTyp.swift */; };
 		FF3DCFC922CE527400BAC269 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3DCFC822CE527400BAC269 /* File.swift */; };
 		FF3DCFCB22CE567600BAC269 /* FriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3DCFCA22CE567600BAC269 /* FriendCollectionViewCell.swift */; };
 		FF40F96322E2257C008BDA2F /* BioTextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF40F96222E2257C008BDA2F /* BioTextViewDelegate.swift */; };
@@ -44,7 +45,7 @@
 		FF763F5E22D64AE100620347 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF763F5D22D64AE100620347 /* StoryViewController.swift */; };
 		FF763F6022D64AEF00620347 /* StoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF763F5F22D64AEF00620347 /* StoryPresenter.swift */; };
 		FF8F063822FC720400F20E63 /* PrivacySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8F063722FC720400F20E63 /* PrivacySettings.swift */; };
-		FF8F063C22FC7F5E00F20E63 /* PrivacyListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8F063B22FC7F5E00F20E63 /* PrivacyListRowView.swift */; };
+		FF8F063C22FC7F5E00F20E63 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8F063B22FC7F5E00F20E63 /* RowView.swift */; };
 		FFA0658222D4C86E003B0B60 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0658122D4C86E003B0B60 /* UIButtonExtension.swift */; };
 		FFA0658622D4CAA7003B0B60 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0658522D4CAA7003B0B60 /* Constants.swift */; };
 		FFA0658D22D4D4D9003B0B60 /* BioPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0658C22D4D4D9003B0B60 /* BioPresenter.swift */; };
@@ -90,6 +91,7 @@
 		FF1C8CBB22CD07C200F3A862 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		FF1C8CBD22CD0B1700F3A862 /* FriendsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewCell.swift; sourceTree = "<group>"; };
 		FF1C8CBF22CD154100F3A862 /* UICollectionViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCellExtension.swift; sourceTree = "<group>"; };
+		FF2AF7EE22FDA6E300815C59 /* PrivacyAccessoryTyp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyAccessoryTyp.swift; sourceTree = "<group>"; };
 		FF3DCFC822CE527400BAC269 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		FF3DCFCA22CE567600BAC269 /* FriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewCell.swift; sourceTree = "<group>"; };
 		FF40F96222E2257C008BDA2F /* BioTextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioTextViewDelegate.swift; sourceTree = "<group>"; };
@@ -106,7 +108,7 @@
 		FF763F5D22D64AE100620347 /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		FF763F5F22D64AEF00620347 /* StoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPresenter.swift; sourceTree = "<group>"; };
 		FF8F063722FC720400F20E63 /* PrivacySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacySettings.swift; sourceTree = "<group>"; };
-		FF8F063B22FC7F5E00F20E63 /* PrivacyListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyListRowView.swift; sourceTree = "<group>"; };
+		FF8F063B22FC7F5E00F20E63 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		FFA0658122D4C86E003B0B60 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		FFA0658522D4CAA7003B0B60 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FFA0658C22D4D4D9003B0B60 /* BioPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioPresenter.swift; sourceTree = "<group>"; };
@@ -147,7 +149,7 @@
 		4A0D4C6922E3255D002F0A89 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				FF763F4222D61E0200620347 /* MockedJSON */,
+				FF763F4222D61E0200620347 /* Data */,
 				FFA0658422D4CA98003B0B60 /* Constants */,
 				FF485C3B22CF6E3400993196 /* Protocol */,
 				FF3DCFC722CE526800BAC269 /* Models */,
@@ -301,9 +303,18 @@
 			path = BaseViewControllers;
 			sourceTree = "<group>";
 		};
+		FF2AF7ED22FDA6CB00815C59 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				FF2AF7EE22FDA6E300815C59 /* PrivacyAccessoryTyp.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		FF3DCFC722CE526800BAC269 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FF8F063722FC720400F20E63 /* PrivacySettings.swift */,
 				FF3DCFC822CE527400BAC269 /* File.swift */,
 				FF763F4522D61E2D00620347 /* Feed.swift */,
 			);
@@ -346,13 +357,13 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		FF763F4222D61E0200620347 /* MockedJSON */ = {
+		FF763F4222D61E0200620347 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				FF763F4322D61E1400620347 /* demo.json */,
 				FF763F4722D6221500620347 /* DataLoader.swift */,
 			);
-			path = MockedJSON;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		FF763F4B22D623F300620347 /* TableViewDataSource */ = {
@@ -428,7 +439,7 @@
 		FF8F063422FC6F0000F20E63 /* PrivacySettings */ = {
 			isa = PBXGroup;
 			children = (
-				FF8F063622FC71F000F20E63 /* Model */,
+				FF2AF7ED22FDA6CB00815C59 /* Enum */,
 				FF8F063522FC70C400F20E63 /* Presentor */,
 			);
 			path = PrivacySettings;
@@ -437,17 +448,9 @@
 		FF8F063522FC70C400F20E63 /* Presentor */ = {
 			isa = PBXGroup;
 			children = (
-				FF8F063B22FC7F5E00F20E63 /* PrivacyListRowView.swift */,
+				FF8F063B22FC7F5E00F20E63 /* RowView.swift */,
 			);
 			path = Presentor;
-			sourceTree = "<group>";
-		};
-		FF8F063622FC71F000F20E63 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				FF8F063722FC720400F20E63 /* PrivacySettings.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		FFA0658322D4C889003B0B60 /* Interactor */ = {
@@ -611,7 +614,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF8F063C22FC7F5E00F20E63 /* PrivacyListRowView.swift in Sources */,
+				FF8F063C22FC7F5E00F20E63 /* RowView.swift in Sources */,
 				FF763F5E22D64AE100620347 /* StoryViewController.swift in Sources */,
 				FF8F063822FC720400F20E63 /* PrivacySettings.swift in Sources */,
 				FF763F5522D6476D00620347 /* CameraController.swift in Sources */,
@@ -634,6 +637,7 @@
 				FF763F5922D647EB00620347 /* CameraControllerExtension.swift in Sources */,
 				FFA0658622D4CAA7003B0B60 /* Constants.swift in Sources */,
 				FF1C8CBC22CD07C200F3A862 /* UIColorExtension.swift in Sources */,
+				FF2AF7EF22FDA6E300815C59 /* PrivacyAccessoryTyp.swift in Sources */,
 				FF1C8CAD22CCCC4D00F3A862 /* MainViewPresenter.swift in Sources */,
 				FF763F5C22D6484300620347 /* CameraControllerEnum.swift in Sources */,
 				FF763F5022D628CC00620347 /* NewsFeedTableViewCell.swift in Sources */,

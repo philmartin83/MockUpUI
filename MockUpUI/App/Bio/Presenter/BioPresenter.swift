@@ -10,6 +10,7 @@ import UIKit
 
 class BioPresenter: NavigationBarProtocol, LayoutProtocol{
     
+    //MARK:- Properties
     weak var controller: BioViewController?
     var tvDelegate = BioTextViewDelegate()
     
@@ -53,6 +54,15 @@ class BioPresenter: NavigationBarProtocol, LayoutProtocol{
         return characterCount
     }()
     
+    //MARK:- Protocol
+    func displayLayout() {
+        setupHolderView()
+        setupTextViewAndCountAttributes()
+        textCountViewUpdater()
+        setupSaveButton()
+    }
+    
+    //MARK:- View Setup
     func setupNavBar() {
         controller?.navController = controller?.navigationController as? BaseNavigationViewController
         guard let label = controller?.navController?.leftTitleLabel else {return}
@@ -75,20 +85,23 @@ class BioPresenter: NavigationBarProtocol, LayoutProtocol{
         controller?.navController?.leftTitleLabel.text = "Add Bio"
     }
     
-    func displayLayout() {
+    func setupHolderView(){
         guard let controller = controller else {return}
         controller.view.addSubview(holderView)
         holderView.leadingAnchor.constraint(equalTo: controller.view.leadingAnchor).isActive = true
         holderView.trailingAnchor.constraint(equalTo: controller.view.trailingAnchor).isActive = true
         holderView.topAnchor.constraint(equalTo: controller.view.topAnchor).isActive = true
         holderView.bottomAnchor.constraint(equalTo: controller.view.bottomAnchor).isActive = true
-        
+    }
+    
+    func setupTextViewAndCountAttributes(){
+        guard let controller = controller else {return}
         tvDelegate.parentView = controller.view
         bioTextView.delegate = tvDelegate
         holderView.addSubview(bioTextView)
         bioTextView.leadingAnchor.constraint(equalTo: holderView.leadingAnchor, constant: 20).isActive = true
         bioTextView.trailingAnchor.constraint(equalTo: holderView.trailingAnchor, constant: -20).isActive = true
-      
+        
         bioTextView.topAnchor.constraint(equalTo: holderView.topAnchor, constant: 20).isActive = true
         bioTextView.heightAnchor.constraint(equalToConstant: 150).isActive = true
         
@@ -101,26 +114,31 @@ class BioPresenter: NavigationBarProtocol, LayoutProtocol{
             bioTextView.text = bio
             bioTextView.textColor = .black
         }
-        
         provideCounterLabelWithData(value: bioString?.count)
-        
+    }
+    
+    func setupSaveButton(){
+        guard let controller = controller else {return}
+        holderView.addSubview(saveButton)
+        saveButton.trailingAnchor.constraint(equalTo: bioTextView.trailingAnchor).isActive = true
+        saveButton.topAnchor.constraint(equalTo: characterCountLabel.bottomAnchor, constant: 15).isActive = true
+        saveButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        saveButton.addTarget(controller.interactor, action: #selector(controller.interactor.saveBio), for: .touchUpInside )
+    }
+    
+    //MARL:- Helper
+    func provideCounterLabelWithData(value: Int?){
+         characterCountLabel.text = "\(value ?? 0) \\ \(bioTextViewTextLength)"
+    }
+    
+    //MARK:- View Change Closure
+    func textCountViewUpdater(){
         // listen to textView updates so we can update the textview character count
         tvDelegate.updateTextViewCountLabel = { [weak self] (value) in
             if let weakSelf = self{
                 weakSelf.provideCounterLabelWithData(value: value)
             }
         }
-        
-        holderView.addSubview(saveButton)
-        saveButton.trailingAnchor.constraint(equalTo: bioTextView.trailingAnchor).isActive = true
-        saveButton.topAnchor.constraint(equalTo: characterCountLabel.bottomAnchor, constant: 15).isActive = true
-        saveButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        saveButton.addTarget(controller.interactor, action: #selector(controller.interactor.saveBio), for: .touchUpInside )
-        
-    }
-    
-    func provideCounterLabelWithData(value: Int?){
-         characterCountLabel.text = "\(value ?? 0) \\ \(bioTextViewTextLength)"
     }
     
 }

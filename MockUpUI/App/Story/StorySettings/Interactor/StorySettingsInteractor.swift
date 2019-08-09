@@ -11,9 +11,14 @@ import UIKit
 class StorySettingsInteractor{
     
     weak var controller: StorySettingsViewController?
+    var updateUI: ((UIButton) ->Void)?
     
     @objc func closeSettings(){
         controller?.dismiss(animated: true, completion: nil)
     }
     
+    @objc func togglePrivacyState(sender: UIButton){
+        sender.isSelected = !sender.isSelected
+        updateUI?(sender)
+    }
 }
