@@ -18,6 +18,9 @@ class StorySettingsInteractor{
     }
     
     @objc func togglePrivacyState(sender: UIButton){
+        if sender.isSelected{
+            return // button is already selected no need to deselect the same checkbox
+        }
         sender.isSelected = !sender.isSelected
         updateUI?(sender)
     }

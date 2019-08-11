@@ -128,7 +128,7 @@ class BioPresenter: NavigationBarProtocol, LayoutProtocol{
     
     //MARL:- Helper
     func provideCounterLabelWithData(value: Int?){
-         characterCountLabel.text = "\(value ?? 0) \\ \(bioTextViewTextLength)"
+         characterCountLabel.text = "\(value ?? 0) \\/ \(bioTextViewTextLength)"
     }
     
     //MARK:- View Change Closure
