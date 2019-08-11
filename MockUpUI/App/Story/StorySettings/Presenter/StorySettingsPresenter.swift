@@ -17,13 +17,13 @@ class StorySettingsPresenter: UIView, LayoutProtocol, NavigationBarProtocol {
     var previouslySelectedPrivacyOption: UIButton?
     var collapsableRow: RowView?
     
-    var scroller: UIScrollView = {
+    lazy var scroller: UIScrollView = {
         let tbView = UIScrollView()
         tbView.translatesAutoresizingMaskIntoConstraints = false
         return tbView
     }()
 
-    var privacyDescTitle: UILabel = {
+    lazy var privacyDescTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: titleFontSize)
@@ -31,7 +31,7 @@ class StorySettingsPresenter: UIView, LayoutProtocol, NavigationBarProtocol {
         return label
     }()
     
-    var privacyDescBody: UILabel = {
+    lazy var privacyDescBody: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: bodyFontSize)
@@ -40,7 +40,7 @@ class StorySettingsPresenter: UIView, LayoutProtocol, NavigationBarProtocol {
         return label
     }()
     
-    var disclaimerMessage: UILabel = {
+    lazy var disclaimerMessage: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: bodyFontSize)
         label.numberOfLines = 0

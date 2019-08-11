@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FriendsListTableViewCell: UITableViewCell, TableViewCellProtocol {
+class FriendsListTableViewCell: UITableViewCell, TableViewCellProtocol , UICollectionViewDelegate {
     
     var dataSource = HomeCollectionViewDataSource()
 
@@ -127,6 +127,7 @@ class FriendsListTableViewCell: UITableViewCell, TableViewCellProtocol {
         dataSource.friends = friends
         
         collectionView.dataSource = dataSource
+        collectionView.delegate = self
         collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
         collectionView.heightAnchor.constraint(equalToConstant: 200).isActive = true
@@ -144,5 +145,14 @@ class FriendsListTableViewCell: UITableViewCell, TableViewCellProtocol {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
+    }
+    
+    //MARK:- CollectionView Delegate
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        // TODO: Cell selection push to nav stack and prese info about friend
+        let cell = dataSource.collectionView(collectionView, cellForItemAt: indexPath)
+        cell.animateButtonPress() // animate our cell press
     }
 }
