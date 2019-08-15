@@ -9,8 +9,11 @@
 import UIKit
 
 class NewsFeedViewController: UIViewController {
-    
+    weak var navController: BaseNavigationViewController?
+    let interactor = NewsFeedInteractor()
     let presenter = NewsFeedPresenter()
+    let dataSource = NewsFeedDataSource()
+    var index: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +21,9 @@ class NewsFeedViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         presenter.controller = self
+        interactor.controller = self
+        presenter.dataSource = dataSource
+        presenter.setupNavBar()
+        presenter.displayLayout()
     }
-    
-
 }

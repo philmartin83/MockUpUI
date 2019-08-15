@@ -176,7 +176,7 @@ class StorySettingsPresenter: UIView, LayoutProtocol, NavigationBarProtocol {
     func setupHideAndMuteStories(){
         guard let controller = controller else {return}
         var counter = 0
-        datasource.getDataForHiddenOrMutedStoeries().forEach { (setting) in
+        datasource.getDataForHiddenOrMutedStories().forEach { (setting) in
             let row = RowView()
             scroller.addSubview(row)
             if counter == 0{

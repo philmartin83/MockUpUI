@@ -15,6 +15,8 @@
 		4A493A0D22DE5F36008FFE12 /* HomeCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A493A0C22DE5F36008FFE12 /* HomeCollectionViewDataSource.swift */; };
 		4A81748E230336DC00CDEC36 /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A81748D230336DC00CDEC36 /* NewsFeedViewController.swift */; };
 		4A8174932303373000CDEC36 /* NewsFeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8174922303373000CDEC36 /* NewsFeedPresenter.swift */; };
+		4AFFF82B2305C05000E2D9DB /* NewsFeedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFFF82A2305C05000E2D9DB /* NewsFeedDataSource.swift */; };
+		4AFFF82D2305C4FB00E2D9DB /* NewsFeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFFF82C2305C4FB00E2D9DB /* NewsFeedInteractor.swift */; };
 		FF1C8C8B22CCC3B600F3A862 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C8C8A22CCC3B600F3A862 /* AppDelegate.swift */; };
 		FF1C8C8D22CCC3B600F3A862 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C8C8C22CCC3B600F3A862 /* ViewController.swift */; };
 		FF1C8C9022CCC3B600F3A862 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1C8C8E22CCC3B600F3A862 /* Main.storyboard */; };
@@ -76,6 +78,8 @@
 		4A493A0C22DE5F36008FFE12 /* HomeCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		4A81748D230336DC00CDEC36 /* NewsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
 		4A8174922303373000CDEC36 /* NewsFeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedPresenter.swift; sourceTree = "<group>"; };
+		4AFFF82A2305C05000E2D9DB /* NewsFeedDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedDataSource.swift; sourceTree = "<group>"; };
+		4AFFF82C2305C4FB00E2D9DB /* NewsFeedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedInteractor.swift; sourceTree = "<group>"; };
 		FF1C8C8722CCC3B600F3A862 /* MockUpUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockUpUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1C8C8A22CCC3B600F3A862 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF1C8C8C22CCC3B600F3A862 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -218,6 +222,7 @@
 		4A81748A2303367C00CDEC36 /* New Feed Detail  */ = {
 			isa = PBXGroup;
 			children = (
+				4AFFF8292305C03500E2D9DB /* DataSource */,
 				4A8174912303370800CDEC36 /* Interactor */,
 				4A817490230336F400CDEC36 /* Presenter */,
 				4A81748F230336ED00CDEC36 /* Controller */,
@@ -244,8 +249,17 @@
 		4A8174912303370800CDEC36 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				4AFFF82C2305C4FB00E2D9DB /* NewsFeedInteractor.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4AFFF8292305C03500E2D9DB /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				4AFFF82A2305C05000E2D9DB /* NewsFeedDataSource.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 		FF1C8C7E22CCC3B600F3A862 = {
@@ -686,11 +700,13 @@
 				FFA0658222D4C86E003B0B60 /* UIButtonExtension.swift in Sources */,
 				FF40F96322E2257C008BDA2F /* BioTextViewDelegate.swift in Sources */,
 				FF763F4A22D623A800620347 /* HomeViewTableViewDataSource.swift in Sources */,
+				4AFFF82D2305C4FB00E2D9DB /* NewsFeedInteractor.swift in Sources */,
 				FF1C8CBA22CD036E00F3A862 /* UIImageExtension.swift in Sources */,
 				FF763F4E22D6244600620347 /* HomeViewTableViewDelegate.swift in Sources */,
 				4A0DB2C322D6900E00BA38D5 /* StorySettingsPresenter.swift in Sources */,
 				FFA0658F22D4D51B003B0B60 /* BioInteractor.swift in Sources */,
 				4A493A0D22DE5F36008FFE12 /* HomeCollectionViewDataSource.swift in Sources */,
+				4AFFF82B2305C05000E2D9DB /* NewsFeedDataSource.swift in Sources */,
 				FF1C8CC022CD154100F3A862 /* UICollectionViewCellExtension.swift in Sources */,
 				FFA0659622D4D719003B0B60 /* MainViewInteractor.swift in Sources */,
 				FF3DCFCB22CE567600BAC269 /* FriendCollectionViewCell.swift in Sources */,

@@ -37,7 +37,7 @@ class DataLoader  {
         return [priv1, priv2, priv3, priv4]
     }
     
-    func getDataForHiddenOrMutedStoeries() -> [PrivacySettings]{
+    func getDataForHiddenOrMutedStories() -> [PrivacySettings]{
         let priv1 = PrivacySettings(title: "Hide your story from", icon: UIImage(named: "Hide")?.withRenderingMode(.alwaysTemplate), subtitle:nil, accessoryType: .chevron, selected: false)
         let priv2 = PrivacySettings(title: "Stories you've muted", icon: UIImage(named: "MutedStory")?.withRenderingMode(.alwaysTemplate), subtitle: nil, accessoryType: .chevron, selected: false)
         return [priv1, priv2]
