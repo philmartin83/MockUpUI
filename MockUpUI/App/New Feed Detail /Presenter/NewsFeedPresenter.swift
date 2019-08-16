@@ -15,8 +15,25 @@ class NewsFeedPresenter: UIView, LayoutProtocol, NavigationBarProtocol{
     
     lazy var headerImageView: UIImageView = {
         let imageV = UIImageView()
+        imageV.contentMode = .scaleAspectFit
         imageV.translatesAutoresizingMaskIntoConstraints = false
         return imageV
+    }()
+    
+    lazy var titleView: UILabel = {
+        let title = UILabel()
+        title.numberOfLines = 0
+        title.font = UIFont.boldSystemFont(ofSize: titleFontSize)
+        title.translatesAutoresizingMaskIntoConstraints = false
+        return title
+    }()
+    
+    lazy var detailText: UILabel = {
+        let detail = UILabel()
+        detail.numberOfLines = 0
+        detail.font = UIFont.systemFont(ofSize: bodyFontSize)
+        detail.translatesAutoresizingMaskIntoConstraints = false
+        return detail
     }()
     
     lazy var scroller: UIScrollView = {
@@ -24,8 +41,6 @@ class NewsFeedPresenter: UIView, LayoutProtocol, NavigationBarProtocol{
         scroller.translatesAutoresizingMaskIntoConstraints = false
         return scroller
     }()
-    
-    
     
     func setupNavBar() {
         
@@ -46,7 +61,7 @@ class NewsFeedPresenter: UIView, LayoutProtocol, NavigationBarProtocol{
         button.addTarget(controller?.interactor, action: #selector(controller?.interactor.popviewController), for: .touchUpInside)
         controller?.navigationItem.leftBarButtonItems = [item1,fixedSpace,item2]
         controller?.navController?.leftTitleLabel.textColor = .white
-        controller?.navController?.leftTitleLabel.text = "Add Bio"
+        controller?.navController?.leftTitleLabel.text = "News Detail"
         
     }
     
@@ -56,6 +71,17 @@ class NewsFeedPresenter: UIView, LayoutProtocol, NavigationBarProtocol{
         scroller.leadingAnchor.constraint(equalTo: controller.view.leadingAnchor).isActive = true
         scroller.trailingAnchor.constraint(equalTo: controller.view.trailingAnchor).isActive = true
         
+        scroller.addSubview(headerImageView)
+        headerImageView.leadingAnchor.constraint(equalTo: scroller.leadingAnchor, constant: 10).isActive = true
+        headerImageView.trailingAnchor.constraint(equalTo: scroller.trailingAnchor, constant:  -20).isActive = true
+        headerImageView.topAnchor.constraint(equalTo: scroller.topAnchor, constant: 10).isActive = true
+        headerImageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        
+        scroller.addSubview(titleView)
+        titleView.leadingAnchor.constraint(equalTo: headerImageView.leadingAnchor).isActive = true
+        titleView.trailingAnchor.constraint(equalTo: headerImageView.trailingAnchor).isActive = true
+        titleView.topAnchor.constraint(equalTo: headerImageView.bottomAnchor, constant: 10).isActive = true
+        
         // handly the update of the UI
         dataSource?.updateUIWithNewsFeedData = { [weak self] (feed) in
             if let weakSelf = self{
@@ -63,9 +89,14 @@ class NewsFeedPresenter: UIView, LayoutProtocol, NavigationBarProtocol{
                     // alertviewcontroller to go here
                 }else{
                     // display in the UI
+                    weakSelf.titleView.text = feed?.title
+                    weakSelf.headerImageView.image = UIImage().base64Decode(strBase64: feed?.image)
+                    weakSelf.detailText.text = feed?.data
                 }
             }
         }
+        detailText.bottomAnchor.constraint(equalTo: scroller.bottomAnchor, constant: -20).isActive = true
+        
     }
     
 }
