@@ -23,6 +23,7 @@ class NewsFeedPresenter: UIView, LayoutProtocol, NavigationBarProtocol{
     lazy var titleView: UILabel = {
         let title = UILabel()
         title.numberOfLines = 0
+        title.text = "" // default empty string
         title.font = UIFont.boldSystemFont(ofSize: titleFontSize)
         title.translatesAutoresizingMaskIntoConstraints = false
         return title
@@ -31,6 +32,7 @@ class NewsFeedPresenter: UIView, LayoutProtocol, NavigationBarProtocol{
     lazy var detailText: UILabel = {
         let detail = UILabel()
         detail.numberOfLines = 0
+        detail.text = "" // default empty string
         detail.font = UIFont.systemFont(ofSize: bodyFontSize)
         detail.translatesAutoresizingMaskIntoConstraints = false
         return detail
@@ -87,6 +89,7 @@ class NewsFeedPresenter: UIView, LayoutProtocol, NavigationBarProtocol{
             if let weakSelf = self{
                 if feed == nil{
                     // alertviewcontroller to go here
+                    controller.alertController.showAlertForBadData(title: "Error", body: "error fetching data from the bundle")
                 }else{
                     // display in the UI
                     weakSelf.titleView.text = feed?.title

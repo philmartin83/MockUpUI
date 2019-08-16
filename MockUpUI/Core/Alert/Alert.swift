@@ -10,4 +10,11 @@ import UIKit
 
 class Alert {
     
+    func showAlertForBadData(title: String, body: String) -> UIAlertController{
+        let controller = UIAlertController(title: title, message: body, preferredStyle: .alert)
+        controller.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        
+        return controller
+    }
+    
 }

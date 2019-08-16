@@ -52,7 +52,7 @@ class StoryPresenter: UIView, LayoutProtocol {
         return videoBtn
     }()
     
-    let cameraButton: UIButton = {
+    lazy var cameraButton: UIButton = {
         let camera = UIButton(type: .custom)
         camera.translatesAutoresizingMaskIntoConstraints = false
         let cameraIcon = UIImage(named: "Camera")?.withRenderingMode(.alwaysTemplate)
@@ -61,7 +61,7 @@ class StoryPresenter: UIView, LayoutProtocol {
         return camera
     }()
     
-    let shutterButton: UIButton = {
+    lazy var shutterButton: UIButton = {
         let btn = UIButton(type: .custom)
         btn.backgroundColor = .white
         btn.translatesAutoresizingMaskIntoConstraints = false

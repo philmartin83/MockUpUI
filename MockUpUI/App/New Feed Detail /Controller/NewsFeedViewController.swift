@@ -13,6 +13,7 @@ class NewsFeedViewController: UIViewController {
     let interactor = NewsFeedInteractor()
     let presenter = NewsFeedPresenter()
     let dataSource = NewsFeedDataSource()
+    let alertController = Alert()
     var index: Int?
 
     override func viewDidLoad() {
