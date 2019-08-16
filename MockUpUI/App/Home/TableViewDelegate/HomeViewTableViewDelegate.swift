@@ -37,7 +37,6 @@ class HomeViewTableViewDelegate: NSObject, UITableViewDelegate {
         return UITableView.automaticDimension
     }
     
-    
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
     }
@@ -49,6 +48,15 @@ class HomeViewTableViewDelegate: NSObject, UITableViewDelegate {
             return 90
         }
         return 0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // only get the last section
+        if indexPath.section == tableViewSections - 1{
+            tableView.deselectRow(at: indexPath, animated: true)
+            let vc = NewsFeedViewController()
+            vc.index = indexPath.row
+        }
     }
     
 }

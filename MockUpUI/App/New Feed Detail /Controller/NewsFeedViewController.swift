@@ -24,6 +24,9 @@ class NewsFeedViewController: UIViewController {
         interactor.controller = self
         presenter.dataSource = dataSource
         presenter.setupNavBar()
+        // display the layout
         presenter.displayLayout()
+        // load our data source from the passed index of the tapped UITableViewCell
+        dataSource.fetchNewsFeedItemById(id: index)
     }
 }

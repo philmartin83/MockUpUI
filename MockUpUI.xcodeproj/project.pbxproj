@@ -147,6 +147,7 @@
 		4A0D4C6822E32542002F0A89 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				4A81748A2303367C00CDEC36 /* New Feed Detail  */,
 				FF1C8CB522CCE6EC00F3A862 /* Home */,
 				FFA0658722D4D3C5003B0B60 /* Bio */,
 				FF763F5122D646D300620347 /* Story */,
@@ -157,7 +158,6 @@
 		4A0D4C6922E3255D002F0A89 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				4A81748A2303367C00CDEC36 /* New Feed Detail  */,
 				FF763F4222D61E0200620347 /* Data */,
 				FFA0658422D4CA98003B0B60 /* Constants */,
 				FF485C3B22CF6E3400993196 /* Protocol */,

@@ -36,3 +36,7 @@ let shutterButtonWidthHeight: CGFloat = 60
 
 //MARK:- Helper Constants
 let emptyString = ""
+
+//MARK:- Home Screen tableview
+
+let tableViewSections = 3

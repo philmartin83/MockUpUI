@@ -97,7 +97,6 @@ class ProfileTableViewCell: UITableViewCell, TableViewCellProtocol {
     }
     
     func layoutTableViewCell(){
-      
         profileImage.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         profileImage.widthAnchor.constraint(equalToConstant: 240).isActive = true
         profileImage.heightAnchor.constraint(equalToConstant: 240).isActive = true
