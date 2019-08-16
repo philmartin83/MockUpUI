@@ -89,7 +89,9 @@ class NewsFeedPresenter: UIView, LayoutProtocol, NavigationBarProtocol{
             if let weakSelf = self{
                 if feed == nil{
                     // alertviewcontroller to go here
-                    controller.alertController.showAlertForBadData(title: "Error", body: "error fetching data from the bundle")
+                    let alertController = controller.alertController.showAlertForBadData(title: "Error", body: "error fetching data from the bundle")
+                    // present the alert controller when there isn't any bundle data.
+                    controller.present(alertController, animated: true, completion: nil)
                 }else{
                     // display in the UI
                     weakSelf.titleView.text = feed?.title
