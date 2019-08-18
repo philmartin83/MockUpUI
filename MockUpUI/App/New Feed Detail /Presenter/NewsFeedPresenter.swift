@@ -88,15 +88,14 @@ class NewsFeedPresenter: UIView, LayoutProtocol, NavigationBarProtocol{
         dataSource?.updateUIWithNewsFeedData = { [weak self] (feed) in
             if let weakSelf = self{
                 if feed == nil{
-                    // alertviewcontroller to go here
-                    let alertController = controller.alertController.showAlertForBadData(title: "Error", body: "error fetching data from the bundle")
-                    // present the alert controller when there isn't any bundle data.
-                    controller.present(alertController, animated: true, completion: nil)
+                    // handle my custom alert controller
+                    controller.present(controller.alertController.showAlertForBadData(title: "Error", body: "Unable to get news feed right now."), animated: true, completion: nil)
+                    
                 }else{
                     // display in the UI
-                    weakSelf.titleView.text = feed?.title
-                    weakSelf.headerImageView.image = UIImage().base64Decode(strBase64: feed?.image)
                     weakSelf.detailText.text = feed?.data
+                    weakSelf.headerImageView.image = UIImage().base64Decode(strBase64: feed?.image)
+                    weakSelf.titleView.text = feed?.title
                 }
             }
         }
