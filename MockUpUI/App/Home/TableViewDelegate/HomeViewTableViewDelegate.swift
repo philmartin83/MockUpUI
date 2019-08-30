@@ -10,6 +10,7 @@ import UIKit
 
 class HomeViewTableViewDelegate: NSObject, UITableViewDelegate {
     
+    var pushControllerToStack: ((Int)-> Void)?
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section > 1{
@@ -54,8 +55,7 @@ class HomeViewTableViewDelegate: NSObject, UITableViewDelegate {
         // only get the last section
         if indexPath.section == tableViewSections - 1{
             tableView.deselectRow(at: indexPath, animated: true)
-            let vc = NewsFeedViewController()
-            vc.index = indexPath.row
+            pushControllerToStack?(indexPath.row)
         }
     }
     

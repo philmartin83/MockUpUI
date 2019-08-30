@@ -19,8 +19,7 @@ class NewsFeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    }
-    override func viewWillAppear(_ animated: Bool) {
+        view.backgroundColor = navbarColour
         presenter.controller = self
         interactor.controller = self
         presenter.dataSource = dataSource
@@ -29,5 +28,9 @@ class NewsFeedViewController: UIViewController {
         presenter.displayLayout()
         // load our data source from the passed index of the tapped UITableViewCell
         dataSource.fetchNewsFeedItemById(id: index)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }

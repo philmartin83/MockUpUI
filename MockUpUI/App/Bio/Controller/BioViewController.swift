@@ -25,7 +25,6 @@ class BioViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.setNeedsStatusBarAppearanceUpdate()
         presenter.setupNavBar()
     }
     

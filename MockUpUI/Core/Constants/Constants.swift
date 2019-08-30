@@ -40,3 +40,11 @@ let emptyString = ""
 //MARK:- Home Screen tableview
 
 let tableViewSections = 3
+let tableViewCellCornerRadius: CGFloat = 30
+
+//MARK:- Corner Radius
+let mainCornerRadius: CGFloat = 40
+
+//MARK:- DateFormat
+let dateFormat = "dd/MM/YYYY HH:mm"
+let serverFormat = "YYYY-MM-dd HH:mm:ss"

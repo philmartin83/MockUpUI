@@ -20,23 +20,15 @@ class MainViewPresenter: UIView, NavigationBarProtocol, LayoutProtocol {
     weak var controller: ViewController?
     lazy var tableView: UITableView = {
         let tV = UITableView()
-        tV.backgroundColor = .clear
+        tV.backgroundColor = .white
+        tV.layer.cornerRadius = mainCornerRadius
         tV.translatesAutoresizingMaskIntoConstraints = false
         tV.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
         return tV
     }()
     
-    lazy var holderView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 40
-        view.backgroundColor = .white
-        view.clipsToBounds = true
-        return view
-    }()
-    
     //MARK:- Protocol
     func displayLayout(){
-        setupHolderView()
         setupDataSource()
         setupTableView()
     }
@@ -57,19 +49,8 @@ class MainViewPresenter: UIView, NavigationBarProtocol, LayoutProtocol {
         tableView.reloadData()
     }
     
-    func setupHolderView(){
-        guard let controller = controller else {return}
-        controller.view.addSubview(holderView)
-        holderView.translatesAutoresizingMaskIntoConstraints = false
-        holderView.leadingAnchor.constraint(equalTo: controller.view.leadingAnchor).isActive = true
-        holderView.topAnchor.constraint(equalTo: controller.view.topAnchor).isActive = true
-        holderView.bottomAnchor.constraint(equalTo: controller.view.bottomAnchor).isActive = true
-        holderView.rightAnchor.constraint(equalTo: controller.view.rightAnchor).isActive = true
-        
-    }
-    
     func setupDataSource(){
-        dataSource.controller = controller
+//        dataSource.controller = controller
         dataSource.fetchData()
         
         dataSource.reloadClosure = { [weak self] in
@@ -80,17 +61,44 @@ class MainViewPresenter: UIView, NavigationBarProtocol, LayoutProtocol {
     }
     
     func setupTableView(){
-        holderView.addSubview(tableView)
+        
+        guard let controller = controller else {return}
+        controller.view.addSubview(tableView)
         tableView.delegate = delegate
         tableView.dataSource = dataSource
-        tableView.leadingAnchor.constraint(equalTo: holderView.leadingAnchor).isActive = true
-        tableView.topAnchor.constraint(equalTo: holderView.topAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: holderView.bottomAnchor).isActive = true
-        tableView.rightAnchor.constraint(equalTo: holderView.rightAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: controller.view.leadingAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: controller.view.topAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: controller.view.bottomAnchor).isActive = true
+        tableView.rightAnchor.constraint(equalTo: controller.view.rightAnchor).isActive = true
         tableView.showsVerticalScrollIndicator = false
         // Time to register our cells
         tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: "ProfileCell")
         tableView.register(FriendsListTableViewCell.self, forCellReuseIdentifier: "FriendsCell")
         tableView.register(NewsFeedTableViewCell.self, forCellReuseIdentifier: "NewsFeed")
+        
+        // listen for our cell selection.
+        delegate.pushControllerToStack = { [weak self] (rowID) in
+            if let weakSelf = self{
+                let vc = NewsFeedViewController()
+                vc.index = rowID
+                weakSelf.controller?.navController?.pushViewController(vc, animated: true)
+            }
+        }
+        
+        dataSource.presentSettingsClosure = { (sender) in
+            controller.interactor.settings(sender: sender)
+        }
+        
+        dataSource.loadAllFriendsClosure = { (sender) in
+            controller.interactor.loadAllFriends(sender: sender)
+        }
+        
+        dataSource.loadFullCameraClosure = { (sender) in
+            controller.interactor.loadFullCamera(sender: sender)
+        }
+        
+        dataSource.presentBioClosure = { (sender) in
+            controller.interactor.presentBioScreen(sender: sender)
+        }
     }
 }

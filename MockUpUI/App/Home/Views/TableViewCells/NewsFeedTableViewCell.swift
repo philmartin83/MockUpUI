@@ -8,7 +8,10 @@
 
 import UIKit
 
-class NewsFeedTableViewCell: UITableViewCell, TableViewCellProtocol {
+class NewsFeedTableViewCell: UITableViewCell, TableViewCellProtocol, CellDataProtocol {
+    // set our allias for the class
+    typealias T = Feed
+    
     
     lazy var feedImage: UIImageView = {
         let image = UIImageView()
@@ -72,6 +75,11 @@ class NewsFeedTableViewCell: UITableViewCell, TableViewCellProtocol {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
+    }
+    
+    func setCellData(data: Feed?) {
+        feedTitle.text = data?.title
+        feedImage.image = UIImage().base64Decode(strBase64: data?.image)
     }
 
 }

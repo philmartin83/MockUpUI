@@ -9,7 +9,6 @@
 import UIKit
 
 class ProfileTableViewCell: UITableViewCell, TableViewCellProtocol {
-    
     var profileImage: UIImageView = {
         let imV = UIImageView()
         imV.layer.cornerRadius = 240 / 2 // create our rounded profilePic

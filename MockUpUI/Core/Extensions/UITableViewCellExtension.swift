@@ -10,7 +10,7 @@ import UIKit
 
 extension UITableViewCell{
     func styleUITableViewCell(){
-        self.contentView.layer.cornerRadius = 30
+        self.contentView.layer.cornerRadius = tableViewCellCornerRadius
         self.selectionStyle = .none
         self.contentView.clipsToBounds = true
         self.backgroundColor = .clear

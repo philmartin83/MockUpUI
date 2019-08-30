@@ -10,9 +10,13 @@ import UIKit
 
 class HomeViewTableViewDataSource: NSObject, UITableViewDataSource {
     
-    weak var controller: ViewController?
     fileprivate var feedArray: [Feed]?
     var reloadClosure: (()->Void)?
+    var presentBioClosure: ((UIButton) -> Void)?
+    var loadFullCameraClosure: ((UIButton) -> Void)?
+    var presentSettingsClosure: ((UIButton) -> Void)?
+    
+    var loadAllFriendsClosure: ((UIButton) -> Void)?
     
     func fetchData() {
         feedArray = DataLoader().loadDataFromBundle()
@@ -48,9 +52,9 @@ class HomeViewTableViewDataSource: NSObject, UITableViewDataSource {
             }
             
             tableView.separatorStyle = .none
-            profileSectionCell.addBioButton.addTarget(controller?.interactor, action: #selector(controller?.interactor.presentBioScreen), for: .touchUpInside)
-            profileSectionCell.addStoryBtn.addTarget(controller?.interactor, action: #selector(controller?.interactor.loadFullCamera), for: .touchUpInside)
-            profileSectionCell.profileSettingsButton.addTarget(controller?.interactor, action: #selector(controller?.interactor.settings), for: .touchUpInside)
+            profileSectionCell.addBioButton.addTarget(self, action: #selector(presentBioScreen), for: .touchUpInside)
+            profileSectionCell.addStoryBtn.addTarget(self, action: #selector(loadFullCamera), for: .touchUpInside)
+            profileSectionCell.profileSettingsButton.addTarget(self, action: #selector(presentSettings), for: .touchUpInside)
             
             return profileSectionCell // we can force unwrap here as have already init'd above.
             
@@ -58,17 +62,33 @@ class HomeViewTableViewDataSource: NSObject, UITableViewDataSource {
             
             let friendsCell = tableView.dequeueReusableCell(withIdentifier: "FriendsCell") as! FriendsListTableViewCell
             tableView.separatorStyle = .none
-            friendsCell.viewAllFriendsButton.addTarget(controller?.interactor, action: #selector(controller?.interactor.loadAllFriends), for: .touchUpInside)
+            friendsCell.viewAllFriendsButton.addTarget(self, action: #selector(loadAllFriends), for: .touchUpInside)
             friendsCell.styleUITableViewCell()
             return friendsCell
         }else{
             let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "NewsFeed") as! NewsFeedTableViewCell
-            let feedItem = feedArray?[indexPath.row]
-            tableViewCell.feedTitle.text = feedItem?.title
-            tableViewCell.feedImage.image = UIImage().base64Decode(strBase64: feedItem?.image)
+            tableViewCell.setCellData(data: feedArray?[indexPath.row])
             tableView.separatorStyle = .none
             return tableViewCell
         }
         
     }
-}
+    
+    //MARK:- Responders
+    
+    @objc private func presentBioScreen(sender: UIButton){
+        presentBioClosure?(sender)
+    }
+    
+    @objc private func loadFullCamera(sender: UIButton){
+        loadFullCameraClosure?(sender)
+    }
+    
+    @objc private func presentSettings(sender: UIButton){
+        presentSettingsClosure?(sender)
+    }
+    
+    @objc private func loadAllFriends(sender: UIButton){
+        loadFullCameraClosure?(sender)
+    }
+}  

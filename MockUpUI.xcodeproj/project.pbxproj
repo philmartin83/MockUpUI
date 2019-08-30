@@ -33,6 +33,9 @@
 		FF1C8CBC22CD07C200F3A862 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C8CBB22CD07C200F3A862 /* UIColorExtension.swift */; };
 		FF1C8CBE22CD0B1700F3A862 /* FriendsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C8CBD22CD0B1700F3A862 /* FriendsListTableViewCell.swift */; };
 		FF1C8CC022CD154100F3A862 /* UICollectionViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C8CBF22CD154100F3A862 /* UICollectionViewCellExtension.swift */; };
+		FF1F52452319672700A0617A /* CellDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F52442319672700A0617A /* CellDataProtocol.swift */; };
+		FF1F524823196E3000A0617A /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F524723196E3000A0617A /* Helper.swift */; };
+		FF1F524A2319847E00A0617A /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F52492319847E00A0617A /* DateExtension.swift */; };
 		FF2AF7EF22FDA6E300815C59 /* PrivacyAccessoryTyp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2AF7EE22FDA6E300815C59 /* PrivacyAccessoryTyp.swift */; };
 		FF3DCFC922CE527400BAC269 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3DCFC822CE527400BAC269 /* File.swift */; };
 		FF3DCFCB22CE567600BAC269 /* FriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3DCFCA22CE567600BAC269 /* FriendCollectionViewCell.swift */; };
@@ -101,6 +104,9 @@
 		FF1C8CBB22CD07C200F3A862 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		FF1C8CBD22CD0B1700F3A862 /* FriendsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewCell.swift; sourceTree = "<group>"; };
 		FF1C8CBF22CD154100F3A862 /* UICollectionViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCellExtension.swift; sourceTree = "<group>"; };
+		FF1F52442319672700A0617A /* CellDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDataProtocol.swift; sourceTree = "<group>"; };
+		FF1F524723196E3000A0617A /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		FF1F52492319847E00A0617A /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		FF2AF7EE22FDA6E300815C59 /* PrivacyAccessoryTyp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyAccessoryTyp.swift; sourceTree = "<group>"; };
 		FF3DCFC822CE527400BAC269 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		FF3DCFCA22CE567600BAC269 /* FriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -160,6 +166,7 @@
 		4A0D4C6922E3255D002F0A89 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				FF1F524623196E1B00A0617A /* Helper */,
 				4AA1667B23074DD400410D35 /* Alert */,
 				FF763F4222D61E0200620347 /* Data */,
 				FFA0658422D4CA98003B0B60 /* Constants */,
@@ -323,6 +330,7 @@
 				FF1C8CB922CD036E00F3A862 /* UIImageExtension.swift */,
 				FF1C8CBB22CD07C200F3A862 /* UIColorExtension.swift */,
 				FF1C8CBF22CD154100F3A862 /* UICollectionViewCellExtension.swift */,
+				FF1F52492319847E00A0617A /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -364,6 +372,14 @@
 				FF1C8CAA22CCC41900F3A862 /* BaseNavigationViewController.swift */,
 			);
 			path = BaseViewControllers;
+			sourceTree = "<group>";
+		};
+		FF1F524623196E1B00A0617A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FF1F524723196E3000A0617A /* Helper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		FF2AF7ED22FDA6CB00815C59 /* Enum */ = {
@@ -416,6 +432,7 @@
 				FF485C3C22CF6E4E00993196 /* NavigationBarProtocol.swift */,
 				FFA0659222D4D6A6003B0B60 /* LayoutProtocol.swift */,
 				4A0D4C6622E31EBB002F0A89 /* TableViewCellProtocol.swift */,
+				FF1F52442319672700A0617A /* CellDataProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -678,6 +695,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF8F063C22FC7F5E00F20E63 /* RowView.swift in Sources */,
+				FF1F52452319672700A0617A /* CellDataProtocol.swift in Sources */,
 				FF763F5E22D64AE100620347 /* StoryViewController.swift in Sources */,
 				FF8F063822FC720400F20E63 /* PrivacySettings.swift in Sources */,
 				FF763F5522D6476D00620347 /* CameraController.swift in Sources */,
@@ -699,6 +717,7 @@
 				FF1C8CB122CCDCF400F3A862 /* ProfileTableViewCell.swift in Sources */,
 				FF1C8CB322CCE5DB00F3A862 /* UITableViewCellExtension.swift in Sources */,
 				FF763F5922D647EB00620347 /* CameraControllerExtension.swift in Sources */,
+				FF1F524823196E3000A0617A /* Helper.swift in Sources */,
 				FFA0658622D4CAA7003B0B60 /* Constants.swift in Sources */,
 				FF1C8CBC22CD07C200F3A862 /* UIColorExtension.swift in Sources */,
 				FF2AF7EF22FDA6E300815C59 /* PrivacyAccessoryTyp.swift in Sources */,
@@ -711,6 +730,7 @@
 				FF763F4622D61E2D00620347 /* Feed.swift in Sources */,
 				FFA0658222D4C86E003B0B60 /* UIButtonExtension.swift in Sources */,
 				FF40F96322E2257C008BDA2F /* BioTextViewDelegate.swift in Sources */,
+				FF1F524A2319847E00A0617A /* DateExtension.swift in Sources */,
 				FF763F4A22D623A800620347 /* HomeViewTableViewDataSource.swift in Sources */,
 				4AFFF82D2305C4FB00E2D9DB /* NewsFeedInteractor.swift in Sources */,
 				FF1C8CBA22CD036E00F3A862 /* UIImageExtension.swift in Sources */,

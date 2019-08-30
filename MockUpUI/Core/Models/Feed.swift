@@ -12,5 +12,5 @@ struct Feed: Codable{
     let title: String?
     let body: String?
     let image: String? // the image normally would be a URL but for demo purposes this will be a base64 string
-    let data:  String? // this will be im YYYY-MM-dd'T'HH:mm:ss format
+    let date:  String? // this will be im YYYY-MM-dd'T'HH:mm:ss format
 }
