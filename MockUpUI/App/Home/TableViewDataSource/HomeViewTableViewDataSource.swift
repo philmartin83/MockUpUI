@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewTableViewDataSource: NSObject, UITableViewDataSource {
+final class HomeViewTableViewDataSource: NSObject, UITableViewDataSource {
     
     fileprivate var feedArray: [Feed]?
     var reloadClosure: (()->Void)?

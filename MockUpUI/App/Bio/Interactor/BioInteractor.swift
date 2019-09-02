@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BioInteractor{
+final class BioInteractor{
     
     weak var controller: BioViewController?
     

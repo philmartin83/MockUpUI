@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsFeedTableViewCell: UITableViewCell, TableViewCellProtocol, CellDataProtocol {
+final class NewsFeedTableViewCell: UITableViewCell, TableViewCellProtocol, CellDataProtocol {
     // set our allias for the class
     typealias T = Feed
     
@@ -27,6 +27,7 @@ class NewsFeedTableViewCell: UITableViewCell, TableViewCellProtocol, CellDataPro
         title.numberOfLines = 1 // added 1 line so we get the ... encoraging people to tap the cell
         title.font = UIFont.boldSystemFont(ofSize: 17)
         title.translatesAutoresizingMaskIntoConstraints = false
+        title.textColor = .black
         return title
     }()
     
@@ -40,6 +41,7 @@ class NewsFeedTableViewCell: UITableViewCell, TableViewCellProtocol, CellDataPro
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.backgroundColor = .clear
         contentView.addSubview(feedImage)
         contentView.addSubview(feedTitle)
         contentView.addSubview(divider)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BioViewController: UIViewController {
+final class BioViewController: UIViewController {
 
     weak var navController: BaseNavigationViewController?
     var presenter = BioPresenter()

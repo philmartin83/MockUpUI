@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FriendsListTableViewCell: UITableViewCell, TableViewCellProtocol , UICollectionViewDelegate {
+final class FriendsListTableViewCell: UITableViewCell, TableViewCellProtocol , UICollectionViewDelegate {
     
     var dataSource = HomeCollectionViewDataSource()
 
@@ -35,6 +35,7 @@ class FriendsListTableViewCell: UITableViewCell, TableViewCellProtocol , UIColle
         title.text = "Friends"
         title.font = UIFont.boldSystemFont(ofSize: boldFontSize)
         title.translatesAutoresizingMaskIntoConstraints = false
+        title.textColor = .black
         title.sizeToFit()
         return title
     }()

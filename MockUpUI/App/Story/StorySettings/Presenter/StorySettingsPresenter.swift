@@ -205,7 +205,7 @@ class StorySettingsPresenter: UIView, LayoutProtocol, NavigationBarProtocol {
         row.trailingAnchor.constraint(equalTo: controller.view.trailingAnchor).isActive = true
         guard let newRow = previousRow else {return} // get the hell out. TO DO add an alertviewcontroller and clean the view "Cannot get data" or something like that
         row.topAnchor.constraint(equalTo: newRow.bottomAnchor, constant: 20).isActive = true
-        row.setupRow(type: .none)
+        row.setupRow(type: PrivacyAccessoryType.none)
         row.bottomAnchor.constraint(equalTo: scroller.bottomAnchor, constant: 10).isActive = true
     }
     

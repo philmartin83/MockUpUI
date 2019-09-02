@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BioPresenter: NavigationBarProtocol, LayoutProtocol{
+final class BioPresenter: NavigationBarProtocol, LayoutProtocol{
     
     //MARK:- Properties
     weak var controller: BioViewController?
@@ -30,6 +30,7 @@ class BioPresenter: NavigationBarProtocol, LayoutProtocol{
         tv.text = bioTextViewplaceHolder
         tv.textColor = UIColor.lightGray
         tv.layer.borderColor = lightGray.cgColor
+        tv.backgroundColor = .clear
         tv.layer.cornerRadius = 10
         tv.font = UIFont.systemFont(ofSize: 15)
         return tv
@@ -128,7 +129,7 @@ class BioPresenter: NavigationBarProtocol, LayoutProtocol{
     
     //MARL:- Helper
     func provideCounterLabelWithData(value: Int?){
-         characterCountLabel.text = "\(value ?? 0) \\/ \(bioTextViewTextLength)"
+         characterCountLabel.text = "\(value ?? 0) / \(bioTextViewTextLength)"
     }
     
     //MARK:- View Change Closure

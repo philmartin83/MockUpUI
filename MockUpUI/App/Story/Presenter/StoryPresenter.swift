@@ -17,7 +17,7 @@ class StoryPresenter: UIView, LayoutProtocol {
     lazy var backButton: UIButton = {
         let backButton = UIButton(type: .custom)
         backButton.translatesAutoresizingMaskIntoConstraints = false
-        let backImage = UIImage(named: "BackStory")?.withRenderingMode(.alwaysTemplate)
+        let backImage = UIImage(named: "Close")?.withRenderingMode(.alwaysTemplate)
         backButton.setImage(backImage, for: .normal)
         backButton.tintColor = .white
         return backButton

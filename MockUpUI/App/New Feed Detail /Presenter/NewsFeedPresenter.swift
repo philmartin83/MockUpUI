@@ -27,6 +27,7 @@ class NewsFeedPresenter: UIView, LayoutProtocol, NavigationBarProtocol{
         title.textAlignment = .center
         title.font = UIFont.boldSystemFont(ofSize: 20)
         title.translatesAutoresizingMaskIntoConstraints = false
+        title.textColor = .black
         return title
     }()
     
@@ -36,6 +37,7 @@ class NewsFeedPresenter: UIView, LayoutProtocol, NavigationBarProtocol{
         detail.text = "" // default empty string
         detail.font = UIFont.systemFont(ofSize: bodyFontSize)
         detail.translatesAutoresizingMaskIntoConstraints = false
+        detail.textColor = .black
         return detail
     }()
     

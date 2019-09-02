@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewTableViewDelegate: NSObject, UITableViewDelegate {
+final class HomeViewTableViewDelegate: NSObject, UITableViewDelegate {
     
     var pushControllerToStack: ((Int)-> Void)?
     

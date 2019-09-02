@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsFeedViewController: UIViewController {
+final class NewsFeedViewController: UIViewController {
     weak var navController: BaseNavigationViewController?
     let interactor = NewsFeedInteractor()
     let presenter = NewsFeedPresenter()

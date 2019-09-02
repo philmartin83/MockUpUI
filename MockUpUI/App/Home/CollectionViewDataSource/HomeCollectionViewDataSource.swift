@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeCollectionViewDataSource: NSObject, UICollectionViewDataSource{
+final class HomeCollectionViewDataSource: NSObject, UICollectionViewDataSource{
     
     var friends: [Friend]?
 

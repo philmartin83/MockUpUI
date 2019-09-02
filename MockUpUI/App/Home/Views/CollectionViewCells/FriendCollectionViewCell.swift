@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FriendCollectionViewCell: UICollectionViewCell {
+final class FriendCollectionViewCell: UICollectionViewCell {
     
     var profileImage: UIImageView = {
         let imageV = UIImageView()
@@ -24,6 +24,7 @@ class FriendCollectionViewCell: UICollectionViewCell {
         name.font = UIFont.boldSystemFont(ofSize: 15)
         name.translatesAutoresizingMaskIntoConstraints = false
         name.textAlignment = .center
+        name.textColor = .black
         return name
     }()
     

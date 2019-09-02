@@ -12,6 +12,7 @@ class StoryViewController: UIViewController {
     
     var presenter = StoryPresenter()
     var interactor = StoryInteractor()
+    var navigation: BaseNavigationViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()

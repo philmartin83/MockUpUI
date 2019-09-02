@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BioTextViewDelegate: NSObject, UITextViewDelegate{
+final class BioTextViewDelegate: NSObject, UITextViewDelegate{
     
     var updateTextViewCountLabel: ((Int?)-> Void)?
     weak var parentView: UIView? = nil

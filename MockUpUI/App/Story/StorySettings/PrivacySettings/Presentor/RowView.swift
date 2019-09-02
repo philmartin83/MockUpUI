@@ -22,6 +22,7 @@ class RowView: UIView{
     var titleView: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: titleFontSize)
+        label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -56,7 +57,7 @@ class RowView: UIView{
     }()
     
     //MARK:- Helper
-    func setupRow(type: PrivacyAccessoryType? = .none) {
+    func setupRow(type: PrivacyAccessoryType? = PrivacyAccessoryType.none) {
         self.backgroundColor = .white
         self.translatesAutoresizingMaskIntoConstraints = false
         addSubview(iconView)
@@ -70,7 +71,7 @@ class RowView: UIView{
         
         titleView.leadingAnchor.constraint(equalTo: iconView.trailingAnchor, constant: 10).isActive = true
         // check our accessory type and adjust accordingly
-        if type == .chevron || type == .none{
+        if type == .chevron || type == PrivacyAccessoryType.none{
             titleView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         }else{
             titleView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true

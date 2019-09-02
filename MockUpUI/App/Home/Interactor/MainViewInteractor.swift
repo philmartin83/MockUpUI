@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewInteractor{
+final class MainViewInteractor{
     
     weak var viewController: ViewController?
     
@@ -35,13 +35,13 @@ class MainViewInteractor{
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
             if let weakSelf = self{
                 let story = StoryViewController()
-                let transition = CATransition()
-                transition.duration = duration
-                transition.type = CATransitionType.push
-                transition.subtype = CATransitionSubtype.fromLeft
-                transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
-                weakSelf.viewController?.view.window!.layer.add(transition, forKey: kCATransition)
-                weakSelf.viewController?.present(story, animated: false, completion: nil)
+//                let transition = CATransition()
+//                transition.duration = duration
+//                transition.type = CATransitionType.push
+//                transition.subtype = CATransitionSubtype.fromLeft
+//                transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+//                weakSelf.viewController?.view.window!.layer.add(transition, forKey: kCATransition)
+                weakSelf.viewController?.present(story, animated: true, completion: nil)
             }
         }
        
