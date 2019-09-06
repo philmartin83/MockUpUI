@@ -31,8 +31,6 @@ final class HomeCollectionViewDataSource: NSObject, UICollectionViewDataSource{
             cell.profileImage.image = #imageLiteral(resourceName: "Default")
         }
         cell.friendName.text = friend?.name
-        cell.contentView.backgroundColor = .white
-        cell.styleUICollectionViewCell()
         return cell
     }
 }

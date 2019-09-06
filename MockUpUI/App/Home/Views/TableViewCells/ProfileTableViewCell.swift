@@ -25,7 +25,6 @@ final class ProfileTableViewCell: UITableViewCell, TableViewCellProtocol {
         nameLabel.textAlignment = .center
         nameLabel.numberOfLines = 0
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.textColor = .black
         return nameLabel
     }()
     
@@ -42,7 +41,8 @@ final class ProfileTableViewCell: UITableViewCell, TableViewCellProtocol {
     var addBioButton: UIButton = {
         var bioBtn = UIButton(type: .custom)
         bioBtn.setTitle("+ Add Bio", for: .normal)
-        bioBtn.setTitleColor(.black, for: .normal)
+        let colour = secondaryButtonTextColour
+        bioBtn.setTitleColor(colour!, for: .normal)
         bioBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         bioBtn.backgroundColor = secondaryButtonBackgroundColour
         bioBtn.translatesAutoresizingMaskIntoConstraints = false
@@ -70,7 +70,9 @@ final class ProfileTableViewCell: UITableViewCell, TableViewCellProtocol {
     
     var profileSettingsButton: UIButton = {
         let settingsBtn = UIButton(type: .custom)
-        settingsBtn.setImage(#imageLiteral(resourceName: "Settings"), for: .normal)
+        let settingsIcon = UIImage(named: "Settings")?.withRenderingMode(.alwaysTemplate)
+        settingsBtn.setImage(settingsIcon, for: .normal)
+        settingsBtn.tintColor = secondaryButtonTextColour 
         settingsBtn.backgroundColor = secondaryButtonBackgroundColour
         settingsBtn.translatesAutoresizingMaskIntoConstraints = false
         settingsBtn.layer.cornerRadius = buttonCornerRadius

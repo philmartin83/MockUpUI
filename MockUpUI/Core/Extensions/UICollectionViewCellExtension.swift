@@ -10,15 +10,20 @@ import UIKit
 
 extension UICollectionViewCell{
     func styleUICollectionViewCell(){
+        if #available(iOS 13.0, *) {
+            self.contentView.backgroundColor = .systemBackground
+        } else {
+           // Fallback on earlier versions
+           self.contentView.backgroundColor = .white
+        }
         self.contentView.layer.cornerRadius = 20
         self.contentView.clipsToBounds = true
         self.backgroundColor = .clear
-        self.contentView.backgroundColor = .white
         self.layer.masksToBounds = false
         self.layer.shadowOpacity = 0.23
         self.layer.shadowRadius = 4
         self.layer.shadowOffset = CGSize(width: 0, height: 0)
-        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowColor = shawdowColour?.cgColor
     }
     
     func animateButtonPress(){

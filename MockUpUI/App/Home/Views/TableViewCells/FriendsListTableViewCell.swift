@@ -35,7 +35,6 @@ final class FriendsListTableViewCell: UITableViewCell, TableViewCellProtocol , U
         title.text = "Friends"
         title.font = UIFont.boldSystemFont(ofSize: boldFontSize)
         title.translatesAutoresizingMaskIntoConstraints = false
-        title.textColor = .black
         title.sizeToFit()
         return title
     }()
@@ -75,10 +74,11 @@ final class FriendsListTableViewCell: UITableViewCell, TableViewCellProtocol , U
         
         let seeAllFriends = UIButton(type: .custom)
         seeAllFriends.setTitle("See All Friends", for: .normal)
+        let seeAllFriendsTitleColour = secondaryButtonTextColour
+        seeAllFriends.setTitleColor(seeAllFriendsTitleColour, for: .normal)
         seeAllFriends.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         seeAllFriends.titleLabel?.sizeToFit()
         seeAllFriends.translatesAutoresizingMaskIntoConstraints = false
-        seeAllFriends.setTitleColor(.black, for: .normal)
         seeAllFriends.backgroundColor = secondaryButtonBackgroundColour
         seeAllFriends.layer.cornerRadius = buttonCornerRadius
         return seeAllFriends

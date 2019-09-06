@@ -27,7 +27,6 @@ final class NewsFeedTableViewCell: UITableViewCell, TableViewCellProtocol, CellD
         title.numberOfLines = 1 // added 1 line so we get the ... encoraging people to tap the cell
         title.font = UIFont.boldSystemFont(ofSize: 17)
         title.translatesAutoresizingMaskIntoConstraints = false
-        title.textColor = .black
         return title
     }()
     

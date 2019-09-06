@@ -24,11 +24,11 @@ final class FriendCollectionViewCell: UICollectionViewCell {
         name.font = UIFont.boldSystemFont(ofSize: 15)
         name.translatesAutoresizingMaskIntoConstraints = false
         name.textAlignment = .center
-        name.textColor = .black
         return name
     }()
     
     override func layoutSubviews() {
+        styleUICollectionViewCell()
         self.contentView.clipsToBounds = true
         self.contentView.addSubview(profileImage)
         profileImage.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor).isActive = true
