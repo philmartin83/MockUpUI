@@ -22,7 +22,6 @@ class RowView: UIView{
     var titleView: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: titleFontSize)
-        label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -58,7 +57,7 @@ class RowView: UIView{
     
     //MARK:- Helper
     func setupRow(type: PrivacyAccessoryType? = PrivacyAccessoryType.none) {
-        self.backgroundColor = .white
+        self.supportDarkMode()
         self.translatesAutoresizingMaskIntoConstraints = false
         addSubview(iconView)
         iconView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true

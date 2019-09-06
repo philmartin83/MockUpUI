@@ -20,12 +20,7 @@ class MainViewPresenter: UIView, NavigationBarProtocol, LayoutProtocol {
     weak var controller: ViewController?
     lazy var tableView: UITableView = {
         let tV = UITableView()
-        if #available(iOS 13.0, *) {
-            tV.backgroundColor = .systemBackground
-        } else {
-            // Fallback on earlier versions
-            tV.backgroundColor = .white
-        }
+        tV.supportDarkMode()
         tV.layer.cornerRadius = mainCornerRadius
         tV.translatesAutoresizingMaskIntoConstraints = false
         tV.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]

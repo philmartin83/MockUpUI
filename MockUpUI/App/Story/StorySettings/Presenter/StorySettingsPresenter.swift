@@ -45,7 +45,6 @@ class StorySettingsPresenter: UIView, LayoutProtocol, NavigationBarProtocol {
         label.font = UIFont.systemFont(ofSize: bodyFontSize)
         label.numberOfLines = 0
         label.text = "Only your friends and connections can reply directly to your story"
-        label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -78,7 +77,8 @@ class StorySettingsPresenter: UIView, LayoutProtocol, NavigationBarProtocol {
         let titleLabel = UIBarButtonItem(customView: label)
         
         controller?.navigationItem.leftBarButtonItems = [closeBtn, fixedSpace, titleLabel]
-        controller?.navController?.leftTitleLabel.textColor = .black
+        controller?.navController?.leftTitleLabel.textColor = defaultTextColour
+       
         controller?.navController?.leftTitleLabel.text = "Story Settings"
     }
     
@@ -136,7 +136,7 @@ class StorySettingsPresenter: UIView, LayoutProtocol, NavigationBarProtocol {
             if setting.accessoryType == .checkbox{
                 row.accessoryViewCheckbox.isSelected = setting.selected
                 if setting.selected{
-                    row.accessoryViewCheckbox.tintColor = navbarColour
+                    row.accessoryViewCheckbox.tintColor = checkboxFillColour
                     previouslySelectedPrivacyOption = row.accessoryViewCheckbox
                 }else{
                     row.accessoryViewCheckbox.tintColor = iconGrey
@@ -217,7 +217,7 @@ class StorySettingsPresenter: UIView, LayoutProtocol, NavigationBarProtocol {
             if let weakSelf = self{
                 weakSelf.previouslySelectedPrivacyOption?.isSelected = false
                 weakSelf.previouslySelectedPrivacyOption?.tintColor = iconGrey
-                button.tintColor = navbarColour
+                button.tintColor = checkboxFillColour
                 weakSelf.previouslySelectedPrivacyOption = button
                 if button.tag == 0{
                     

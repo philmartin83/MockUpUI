@@ -18,6 +18,8 @@
 		4AA1667D23074E0000410D35 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA1667C23074E0000410D35 /* Alert.swift */; };
 		4AFFF82B2305C05000E2D9DB /* NewsFeedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFFF82A2305C05000E2D9DB /* NewsFeedDataSource.swift */; };
 		4AFFF82D2305C4FB00E2D9DB /* NewsFeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFFF82C2305C4FB00E2D9DB /* NewsFeedInteractor.swift */; };
+		FF1510052322C3AE0075E071 /* MockUpUIInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1510042322C3AE0075E071 /* MockUpUIInteractorTest.swift */; };
+		FF1510072322C62B0075E071 /* MockUpUIExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1510062322C62B0075E071 /* MockUpUIExtensionTest.swift */; };
 		FF1C8C8B22CCC3B600F3A862 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C8C8A22CCC3B600F3A862 /* AppDelegate.swift */; };
 		FF1C8C8D22CCC3B600F3A862 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1C8C8C22CCC3B600F3A862 /* ViewController.swift */; };
 		FF1C8C9022CCC3B600F3A862 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1C8C8E22CCC3B600F3A862 /* Main.storyboard */; };
@@ -54,7 +56,6 @@
 		FF763F6022D64AEF00620347 /* StoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF763F5F22D64AEF00620347 /* StoryPresenter.swift */; };
 		FF8F063822FC720400F20E63 /* PrivacySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8F063722FC720400F20E63 /* PrivacySettings.swift */; };
 		FF8F063C22FC7F5E00F20E63 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8F063B22FC7F5E00F20E63 /* RowView.swift */; };
-		FFA0658222D4C86E003B0B60 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0658122D4C86E003B0B60 /* UIButtonExtension.swift */; };
 		FFA0658622D4CAA7003B0B60 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0658522D4CAA7003B0B60 /* Constants.swift */; };
 		FFA0658D22D4D4D9003B0B60 /* BioPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0658C22D4D4D9003B0B60 /* BioPresenter.swift */; };
 		FFA0658F22D4D51B003B0B60 /* BioInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0658E22D4D51B003B0B60 /* BioInteractor.swift */; };
@@ -85,6 +86,8 @@
 		4AA1667C23074E0000410D35 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		4AFFF82A2305C05000E2D9DB /* NewsFeedDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedDataSource.swift; sourceTree = "<group>"; };
 		4AFFF82C2305C4FB00E2D9DB /* NewsFeedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedInteractor.swift; sourceTree = "<group>"; };
+		FF1510042322C3AE0075E071 /* MockUpUIInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUpUIInteractorTest.swift; sourceTree = "<group>"; };
+		FF1510062322C62B0075E071 /* MockUpUIExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUpUIExtensionTest.swift; sourceTree = "<group>"; };
 		FF1C8C8722CCC3B600F3A862 /* MockUpUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockUpUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1C8C8A22CCC3B600F3A862 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF1C8C8C22CCC3B600F3A862 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -125,7 +128,6 @@
 		FF763F5F22D64AEF00620347 /* StoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPresenter.swift; sourceTree = "<group>"; };
 		FF8F063722FC720400F20E63 /* PrivacySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacySettings.swift; sourceTree = "<group>"; };
 		FF8F063B22FC7F5E00F20E63 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
-		FFA0658122D4C86E003B0B60 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		FFA0658522D4CAA7003B0B60 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FFA0658C22D4D4D9003B0B60 /* BioPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioPresenter.swift; sourceTree = "<group>"; };
 		FFA0658E22D4D51B003B0B60 /* BioInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioInteractor.swift; sourceTree = "<group>"; };
@@ -317,6 +319,8 @@
 			children = (
 				FF1C8C9F22CCC3B800F3A862 /* MockUpUITests.swift */,
 				FF1C8CA122CCC3B800F3A862 /* Info.plist */,
+				FF1510042322C3AE0075E071 /* MockUpUIInteractorTest.swift */,
+				FF1510062322C62B0075E071 /* MockUpUIExtensionTest.swift */,
 			);
 			path = MockUpUITests;
 			sourceTree = "<group>";
@@ -324,7 +328,6 @@
 		FF1C8CB422CCE66200F3A862 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FFA0658122D4C86E003B0B60 /* UIButtonExtension.swift */,
 				FF1C8CAE22CCD01B00F3A862 /* UIViewExtension.swift */,
 				FF1C8CB222CCE5DB00F3A862 /* UITableViewCellExtension.swift */,
 				FF1C8CB922CD036E00F3A862 /* UIImageExtension.swift */,
@@ -728,7 +731,6 @@
 				FF485C3D22CF6E4E00993196 /* NavigationBarProtocol.swift in Sources */,
 				FF1C8C8B22CCC3B600F3A862 /* AppDelegate.swift in Sources */,
 				FF763F4622D61E2D00620347 /* Feed.swift in Sources */,
-				FFA0658222D4C86E003B0B60 /* UIButtonExtension.swift in Sources */,
 				FF40F96322E2257C008BDA2F /* BioTextViewDelegate.swift in Sources */,
 				FF1F524A2319847E00A0617A /* DateExtension.swift in Sources */,
 				FF763F4A22D623A800620347 /* HomeViewTableViewDataSource.swift in Sources */,
@@ -751,6 +753,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF1C8CA022CCC3B800F3A862 /* MockUpUITests.swift in Sources */,
+				FF1510052322C3AE0075E071 /* MockUpUIInteractorTest.swift in Sources */,
+				FF1510072322C62B0075E071 /* MockUpUIExtensionTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

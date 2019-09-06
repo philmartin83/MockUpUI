@@ -41,7 +41,7 @@ final class ProfileTableViewCell: UITableViewCell, TableViewCellProtocol {
     var addBioButton: UIButton = {
         var bioBtn = UIButton(type: .custom)
         bioBtn.setTitle("+ Add Bio", for: .normal)
-        let colour = secondaryButtonTextColour
+        let colour = defaultTextColour
         bioBtn.setTitleColor(colour!, for: .normal)
         bioBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         bioBtn.backgroundColor = secondaryButtonBackgroundColour
@@ -72,7 +72,7 @@ final class ProfileTableViewCell: UITableViewCell, TableViewCellProtocol {
         let settingsBtn = UIButton(type: .custom)
         let settingsIcon = UIImage(named: "Settings")?.withRenderingMode(.alwaysTemplate)
         settingsBtn.setImage(settingsIcon, for: .normal)
-        settingsBtn.tintColor = secondaryButtonTextColour 
+        settingsBtn.tintColor = defaultTextColour
         settingsBtn.backgroundColor = secondaryButtonBackgroundColour
         settingsBtn.translatesAutoresizingMaskIntoConstraints = false
         settingsBtn.layer.cornerRadius = buttonCornerRadius

@@ -74,7 +74,7 @@ final class FriendsListTableViewCell: UITableViewCell, TableViewCellProtocol , U
         
         let seeAllFriends = UIButton(type: .custom)
         seeAllFriends.setTitle("See All Friends", for: .normal)
-        let seeAllFriendsTitleColour = secondaryButtonTextColour
+        let seeAllFriendsTitleColour = defaultTextColour
         seeAllFriends.setTitleColor(seeAllFriendsTitleColour, for: .normal)
         seeAllFriends.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         seeAllFriends.titleLabel?.sizeToFit()

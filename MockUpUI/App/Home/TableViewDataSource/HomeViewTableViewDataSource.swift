@@ -89,6 +89,6 @@ final class HomeViewTableViewDataSource: NSObject, UITableViewDataSource {
     }
     
     @objc private func loadAllFriends(sender: UIButton){
-        loadFullCameraClosure?(sender)
+        loadAllFriendsClosure?(sender)
     }
 }  

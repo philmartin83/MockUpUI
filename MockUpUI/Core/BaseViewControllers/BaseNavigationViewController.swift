@@ -30,7 +30,9 @@ class BaseNavigationViewController: UINavigationController {
     lazy var closeButton: UIButton = {
         let closeBtn = UIButton(type: .custom)
         closeBtn.translatesAutoresizingMaskIntoConstraints = false
-        closeBtn.setImage(UIImage(named: "Close"), for: .normal)
+        let image = UIImage(named: "Close")?.withRenderingMode(.alwaysTemplate)
+        closeBtn.tintColor = defaultTextColour // not really the text colour the the Color set supports the same for dark mode
+        closeBtn.setImage(image, for: .normal)
         return closeBtn
     }()
     

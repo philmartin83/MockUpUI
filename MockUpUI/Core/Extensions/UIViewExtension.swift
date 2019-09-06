@@ -25,4 +25,25 @@ extension UIView {
         self.layer.mask = maskLayer
     }
     
+    func supportDarkMode(){
+        if #available(iOS 13.0, *) {
+            self.backgroundColor = .systemBackground
+        } else {
+            // Fallback on earlier versions
+            self.backgroundColor = .white
+        }
+    }
+    
+    func animateButtonPress(){
+           UIView.animate(withDuration: 0.2,
+              animations: {
+               self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+           },
+              completion: { _ in
+               UIView.animate(withDuration: 0.2) {
+                   self.transform = CGAffineTransform.identity
+               }
+           })
+    }
+    
 }

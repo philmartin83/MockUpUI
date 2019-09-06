@@ -9,11 +9,6 @@
 import UIKit
 
 class Helper {
-    func findRootViewcontroller() -> UIViewController?{
-        guard let window = UIApplication.shared.delegate?.window else {
-            return nil
-        }
-        return window?.rootViewController
-    }
+    
 }
 

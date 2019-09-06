@@ -11,12 +11,7 @@ import UIKit
 extension UITableViewCell{
     func styleUITableViewCell(){
         
-        if #available(iOS 13.0, *) {
-            self.contentView.backgroundColor = .systemBackground
-        } else {
-           // Fallback on earlier versions
-            self.contentView.backgroundColor = .white
-        }
+        self.contentView.supportDarkMode()
         self.contentView.layer.cornerRadius = tableViewCellCornerRadius
         self.selectionStyle = .none
         self.contentView.clipsToBounds = true

@@ -18,7 +18,7 @@ class StorySettingsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        view.backgroundColor = lightGray
+        view.backgroundColor = storySettingsViewControllerBakcgroundColour
         
         presenter.controller = self
         interactor.controller = self

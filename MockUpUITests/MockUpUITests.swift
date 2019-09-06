@@ -17,18 +17,51 @@ class MockUpUITests: XCTestCase {
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testHome(){
+        let home = ViewController()
+        home.viewDidLoad()
+        home.viewWillAppear(true)
+        XCTAssertNotNil(home)
+        XCTAssertNotNil(home.interactor)
+        XCTAssertNotNil(home.presenter)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testSettings(){
+        let settings = StorySettingsViewController()
+        settings.viewDidLoad()
+        settings.viewWillAppear(false)
+        XCTAssertNotNil(settings)
+        XCTAssertNotNil(settings.interactor)
+        XCTAssertNotNil(settings.presenter)
     }
+    
+    func testBio(){
+        let bio = BioViewController()
+        bio.viewDidLoad()
+        bio.viewWillAppear(false)
+        XCTAssertNotNil(bio)
+        XCTAssertNotNil(bio.interactor)
+        XCTAssertNotNil(bio.presenter)
+    }
+    
+    func testNewsFeedDetail(){
+        let newsFeed = NewsFeedViewController()
+        newsFeed.viewDidLoad()
+        newsFeed.viewWillAppear(true)
+        XCTAssertNotNil(newsFeed.interactor)
+        XCTAssertNotNil(newsFeed.presenter)
+    }
+    
+    func testStory(){
+        let story = StoryViewController()
+        story.viewDidLoad()
+        story.viewWillAppear(false)
+        XCTAssertNotNil(story.interactor)
+        XCTAssertNotNil(story.presenter)
+    }
+   
 
 }

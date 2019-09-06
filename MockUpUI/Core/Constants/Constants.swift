@@ -11,7 +11,7 @@ import UIKit
 //MARK:- Styling
 let primaryColour = UIColor(named: "PrimaryButtonColour")
 let shawdowColour = UIColor(named: "ShadowColour")
-let secondaryButtonTextColour = UIColor(named: "DefaultButtonTextColour")
+let defaultTextColour = UIColor(named: "DefaultButtonTextColour")
 let secondaryButtonBackgroundColour = UIColor(named: "DefaultButtonColour")
 let buttonCornerRadius: CGFloat = 5
 let boldFontSize: CGFloat = 35
@@ -35,6 +35,10 @@ let bioTextViewTextLength = 200
 
 let camerButtonsWidthHeight: CGFloat = 30
 let shutterButtonWidthHeight: CGFloat = 60
+
+//MARK:- Story Settings
+let storySettingsViewControllerBakcgroundColour =  UIColor(named: "SettingsBackground")
+let checkboxFillColour = UIColor.colourStringWitHex(hexColour: "3232FF", withAlpha: 1)
 
 //MARK:- Helper Constants
 let emptyString = ""

@@ -42,7 +42,7 @@ final class MainViewInteractor{
                 transition.subtype = CATransitionSubtype.fromLeft
                 transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
                 weakSelf.viewController?.view.window!.layer.add(transition, forKey: kCATransition)
-                weakSelf.viewController?.present(story, animated: true, completion: nil)
+                weakSelf.viewController?.present(story, animated: false, completion: nil)
             }
         }
        
