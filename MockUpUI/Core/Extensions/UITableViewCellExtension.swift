@@ -21,5 +21,7 @@ extension UITableViewCell{
         self.layer.shadowRadius = 4
         self.layer.shadowOffset = CGSize(width: 0, height: 0)
         self.layer.shadowColor = shawdowColour?.cgColor
+        self.layer.shouldRasterize = true
+        self.layer.rasterizationScale = UIScreen.main.scale
     }
 }

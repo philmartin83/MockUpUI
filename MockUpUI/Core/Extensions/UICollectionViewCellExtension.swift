@@ -17,7 +17,9 @@ extension UICollectionViewCell{
         self.layer.masksToBounds = false
         self.layer.shadowOpacity = 0.23
         self.layer.shadowRadius = 4
-        self.layer.shadowOffset = CGSize(width: 0, height: 0)
+        self.layer.shadowOffset = CGSize(width: 2, height: 2)
         self.layer.shadowColor = shawdowColour?.cgColor
+        self.layer.shouldRasterize = true
+        self.layer.rasterizationScale = UIScreen.main.scale
     }
 }

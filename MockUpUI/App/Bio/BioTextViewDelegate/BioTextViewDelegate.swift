@@ -37,7 +37,7 @@ final class BioTextViewDelegate: NSObject, UITextViewDelegate{
             // the text color to black then set its text to the
             // replacement string
         else if textView.textColor == UIColor.lightGray && !text.isEmpty {
-            textView.textColor = .black
+            textView.textColor = defaultTextColour
             textView.text = text
             updateTextViewCountLabel?(textView.text.count)
         }

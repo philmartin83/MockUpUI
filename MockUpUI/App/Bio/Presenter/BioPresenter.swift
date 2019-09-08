@@ -16,7 +16,7 @@ final class BioPresenter: NavigationBarProtocol, LayoutProtocol{
     
     var holderView: UIView = {
         let holder = UIView()
-        holder.backgroundColor = .white
+        holder.supportDarkMode()
         holder.layer.cornerRadius = 40
         holder.clipsToBounds = true
         holder.translatesAutoresizingMaskIntoConstraints = false
@@ -28,7 +28,7 @@ final class BioPresenter: NavigationBarProtocol, LayoutProtocol{
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.layer.borderWidth = 1.5
         tv.text = bioTextViewplaceHolder
-        tv.textColor = UIColor.lightGray
+        tv.textColor = .lightGray
         tv.layer.borderColor = lightGray.cgColor
         tv.backgroundColor = .clear
         tv.layer.cornerRadius = 10
